@@ -75,12 +75,12 @@ export default class PagesApi {
 
 
     /**
-     * Get Pages
+     * Get Page
      * @param {Object} opts Optional parameters
      * @param {String} opts.slug The pages slug, if none give the homepage is returned. Also paths with subpages are allowed
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Page} and HTTP response
      */
-    pagesWithHttpInfo(opts) {
+    pageWithHttpInfo(opts) {
       opts = opts || {};
       let postBody = null;
 
@@ -106,13 +106,13 @@ export default class PagesApi {
     }
 
     /**
-     * Get Pages
+     * Get Page
      * @param {Object} opts Optional parameters
      * @param {String} opts.slug The pages slug, if none give the homepage is returned. Also paths with subpages are allowed
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Page}
      */
-    pages(opts) {
-      return this.pagesWithHttpInfo(opts)
+    page(opts) {
+      return this.pageWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

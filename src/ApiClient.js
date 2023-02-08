@@ -33,11 +33,11 @@ class ApiClient {
      * Overrides the default value set in spec file if present
      * @param {String} basePath
      */
-    constructor(basePath = 'https://api.flyo.cloud/nitro') {
+    constructor(basePath = 'https://edgeapi.flyo.cloud/nitro') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://api.flyo.cloud/nitro
+         * @default https://edgeapi.flyo.cloud/nitro
          */
         this.basePath = basePath.replace(/\/+$/, '');
 
@@ -594,7 +594,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://api.flyo.cloud/nitro",
+              'url': "https://edgeapi.flyo.cloud/nitro",
               'description': "Production Server",
             }
       ];

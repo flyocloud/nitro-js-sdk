@@ -1,6 +1,14 @@
 .babelrc
 .gitignore
-git_push.sh
+docs/Block.md
+docs/BlockSlotsInner.md
+docs/Config200Response.md
+docs/Config200ResponseNav.md
+docs/Config200ResponseNitro.md
+docs/ConfigApi.md
+docs/Page.md
+docs/PagesApi.md
+docs/PagesInner.md
 src/ApiClient.js
 src/api/ConfigApi.js
 src/api/PagesApi.js

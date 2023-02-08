@@ -53,6 +53,9 @@ class PagesInner {
             if (data.hasOwnProperty('href')) {
                 obj['href'] = ApiClient.convertToType(data['href'], 'String');
             }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
             if (data.hasOwnProperty('children')) {
                 obj['children'] = ApiClient.convertToType(data['children'], [PagesInner]);
             }
@@ -73,6 +76,10 @@ class PagesInner {
         // ensure the json data is a string
         if (data['href'] && !(typeof data['href'] === 'string' || data['href'] instanceof String)) {
             throw new Error("Expected the field `href` to be a primitive type in the JSON string but got " + data['href']);
+        }
+        // ensure the json data is a string
+        if (data['path'] && !(typeof data['path'] === 'string' || data['path'] instanceof String)) {
+            throw new Error("Expected the field `path` to be a primitive type in the JSON string but got " + data['path']);
         }
         if (data['children']) { // data not null
             // ensure the json data is an array
@@ -102,6 +109,12 @@ PagesInner.prototype['label'] = undefined;
  * @member {String} href
  */
 PagesInner.prototype['href'] = undefined;
+
+/**
+ * A path always starts with a trailing slash
+ * @member {String} path
+ */
+PagesInner.prototype['path'] = undefined;
 
 /**
  * @member {Array.<module:model/PagesInner>} children

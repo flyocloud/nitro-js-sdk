@@ -22,7 +22,7 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
-docs/
+#docs/
 test/
 .travis.yml
 git_push.sh
