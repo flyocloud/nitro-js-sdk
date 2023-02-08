@@ -26,6 +26,7 @@ docs/
 test/
 .travis.yml
 git_push.sh
+mocha.opts
 
-#README.md
-#package.json
+README.md
+package.json
