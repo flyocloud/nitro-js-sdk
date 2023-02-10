@@ -60,6 +60,12 @@ class Block {
             if (data.hasOwnProperty('identifier')) {
                 obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
             }
+            if (data.hasOwnProperty('uid')) {
+                obj['uid'] = ApiClient.convertToType(data['uid'], 'String');
+            }
+            if (data.hasOwnProperty('component')) {
+                obj['component'] = ApiClient.convertToType(data['component'], 'String');
+            }
             if (data.hasOwnProperty('slots')) {
                 obj['slots'] = ApiClient.convertToType(data['slots'], [BlockSlotsInner]);
             }
@@ -80,6 +86,14 @@ class Block {
         // ensure the json data is a string
         if (data['identifier'] && !(typeof data['identifier'] === 'string' || data['identifier'] instanceof String)) {
             throw new Error("Expected the field `identifier` to be a primitive type in the JSON string but got " + data['identifier']);
+        }
+        // ensure the json data is a string
+        if (data['uid'] && !(typeof data['uid'] === 'string' || data['uid'] instanceof String)) {
+            throw new Error("Expected the field `uid` to be a primitive type in the JSON string but got " + data['uid']);
+        }
+        // ensure the json data is a string
+        if (data['component'] && !(typeof data['component'] === 'string' || data['component'] instanceof String)) {
+            throw new Error("Expected the field `component` to be a primitive type in the JSON string but got " + data['component']);
         }
         if (data['slots']) { // data not null
             // ensure the json data is an array
@@ -119,10 +133,22 @@ Block.prototype['content'] = undefined;
 Block.prototype['config'] = undefined;
 
 /**
- * The unique identifier for the current block
+ * The unique identifier for the current block type
  * @member {String} identifier
  */
 Block.prototype['identifier'] = undefined;
+
+/**
+ * An unique identifier across all blocks
+ * @member {String} uid
+ */
+Block.prototype['uid'] = undefined;
+
+/**
+ * An unique identifier for a component annotation for the current block type
+ * @member {String} component
+ */
+Block.prototype['component'] = undefined;
 
 /**
  * @member {Array.<module:model/BlockSlotsInner>} slots
