@@ -18,10 +18,16 @@ import BlockSlotsInner from './model/BlockSlotsInner';
 import Config200Response from './model/Config200Response';
 import Config200ResponseNav from './model/Config200ResponseNav';
 import Config200ResponseNitro from './model/Config200ResponseNitro';
+import Entity200Response from './model/Entity200Response';
+import Entity200ResponseEntity from './model/Entity200ResponseEntity';
+import Entity200ResponseEntityEntityMetric from './model/Entity200ResponseEntityEntityMetric';
 import Page from './model/Page';
 import PagesInner from './model/PagesInner';
+import Sitemap200ResponseInner from './model/Sitemap200ResponseInner';
 import ConfigApi from './api/ConfigApi';
+import EntitiesApi from './api/EntitiesApi';
 import PagesApi from './api/PagesApi';
+import SitemapApi from './api/SitemapApi';
 
 
 /**
@@ -93,6 +99,24 @@ export {
     Config200ResponseNitro,
 
     /**
+     * The Entity200Response model constructor.
+     * @property {module:model/Entity200Response}
+     */
+    Entity200Response,
+
+    /**
+     * The Entity200ResponseEntity model constructor.
+     * @property {module:model/Entity200ResponseEntity}
+     */
+    Entity200ResponseEntity,
+
+    /**
+     * The Entity200ResponseEntityEntityMetric model constructor.
+     * @property {module:model/Entity200ResponseEntityEntityMetric}
+     */
+    Entity200ResponseEntityEntityMetric,
+
+    /**
      * The Page model constructor.
      * @property {module:model/Page}
      */
@@ -105,14 +129,32 @@ export {
     PagesInner,
 
     /**
+     * The Sitemap200ResponseInner model constructor.
+     * @property {module:model/Sitemap200ResponseInner}
+     */
+    Sitemap200ResponseInner,
+
+    /**
     * The ConfigApi service constructor.
     * @property {module:api/ConfigApi}
     */
     ConfigApi,
 
     /**
+    * The EntitiesApi service constructor.
+    * @property {module:api/EntitiesApi}
+    */
+    EntitiesApi,
+
+    /**
     * The PagesApi service constructor.
     * @property {module:api/PagesApi}
     */
-    PagesApi
+    PagesApi,
+
+    /**
+    * The SitemapApi service constructor.
+    * @property {module:api/SitemapApi}
+    */
+    SitemapApi
 };
