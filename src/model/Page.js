@@ -51,6 +51,9 @@ class Page {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
+            if (data.hasOwnProperty('uid')) {
+                obj['uid'] = ApiClient.convertToType(data['uid'], 'String');
+            }
             if (data.hasOwnProperty('nitro_id')) {
                 obj['nitro_id'] = ApiClient.convertToType(data['nitro_id'], 'Number');
             }
@@ -101,6 +104,10 @@ class Page {
      */
     static validateJSON(data) {
         // ensure the json data is a string
+        if (data['uid'] && !(typeof data['uid'] === 'string' || data['uid'] instanceof String)) {
+            throw new Error("Expected the field `uid` to be a primitive type in the JSON string but got " + data['uid']);
+        }
+        // ensure the json data is a string
         if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
             throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
         }
@@ -131,6 +138,12 @@ class Page {
  * @member {Number} id
  */
 Page.prototype['id'] = undefined;
+
+/**
+ * A unique identifier for the page
+ * @member {String} uid
+ */
+Page.prototype['uid'] = undefined;
 
 /**
  * @member {Number} nitro_id

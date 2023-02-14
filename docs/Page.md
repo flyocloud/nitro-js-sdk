@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | [optional] 
+**uid** | **String** | A unique identifier for the page | [optional] 
 **nitroId** | **Number** |  | [optional] 
 **title** | **String** |  | [optional] 
 **slug** | **String** |  | [optional] 

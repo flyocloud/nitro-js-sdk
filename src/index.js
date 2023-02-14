@@ -18,6 +18,7 @@ import BlockSlotsInner from './model/BlockSlotsInner';
 import Config200Response from './model/Config200Response';
 import Config200ResponseNav from './model/Config200ResponseNav';
 import Config200ResponseNitro from './model/Config200ResponseNitro';
+import Content from './model/Content';
 import Entity200Response from './model/Entity200Response';
 import Entity200ResponseEntity from './model/Entity200ResponseEntity';
 import Entity200ResponseEntityEntityMetric from './model/Entity200ResponseEntityEntityMetric';
@@ -25,6 +26,7 @@ import Page from './model/Page';
 import PagesInner from './model/PagesInner';
 import Sitemap200ResponseInner from './model/Sitemap200ResponseInner';
 import ConfigApi from './api/ConfigApi';
+import ContentApi from './api/ContentApi';
 import EntitiesApi from './api/EntitiesApi';
 import PagesApi from './api/PagesApi';
 import SitemapApi from './api/SitemapApi';
@@ -99,6 +101,12 @@ export {
     Config200ResponseNitro,
 
     /**
+     * The Content model constructor.
+     * @property {module:model/Content}
+     */
+    Content,
+
+    /**
      * The Entity200Response model constructor.
      * @property {module:model/Entity200Response}
      */
@@ -139,6 +147,12 @@ export {
     * @property {module:api/ConfigApi}
     */
     ConfigApi,
+
+    /**
+    * The ContentApi service constructor.
+    * @property {module:api/ContentApi}
+    */
+    ContentApi,
 
     /**
     * The EntitiesApi service constructor.
