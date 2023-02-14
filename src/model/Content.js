@@ -22,10 +22,14 @@ class Content {
     /**
      * Constructs a new <code>Content</code>.
      * @alias module:model/Content
+     * @param value {String} 
+     * @param identifier {String} 
+     * @param uid {String} 
+     * @param token {String} 
      */
-    constructor() { 
+    constructor(value, identifier, uid, token) { 
         
-        Content.initialize(this);
+        Content.initialize(this, value, identifier, uid, token);
     }
 
     /**
@@ -33,7 +37,11 @@ class Content {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, value, identifier, uid, token) { 
+        obj['value'] = value;
+        obj['identifier'] = identifier;
+        obj['uid'] = uid;
+        obj['token'] = token;
     }
 
     /**
@@ -69,6 +77,12 @@ class Content {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Content</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of Content.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // ensure the json data is a string
         if (data['value'] && !(typeof data['value'] === 'string' || data['value'] instanceof String)) {
             throw new Error("Expected the field `value` to be a primitive type in the JSON string but got " + data['value']);
@@ -92,7 +106,7 @@ class Content {
 
 }
 
-
+Content.RequiredProperties = ["value", "identifier", "uid", "token"];
 
 /**
  * @member {String} value
