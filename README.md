@@ -9,20 +9,22 @@ yarn add @flyodev/nitrocms
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-
-import { ApiClient, ConfigApi } from '@flyodev/nitrocms'
+import { ApiClient, ConfigApi, PagesApi } from '@flyodev/nitrocms'
 
 var defaultClient = ApiClient.instance;
 defaultClient.defaultHeaders = {}
 
 var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = "TOKEN!"
+ApiKeyAuth.apiKey = "INSERT_YOUR_TOKEN_HERE"
 
-var configApi = new ConfigApi()
+// the config data contains all informations, including all pages to retrieve further informations like page content:
+const configData = await new ConfigApi().config()
 
-configApi.config().then(data => {
-  console.log(data)
-})
+// retrieve a the content for home page
+const homeData = await new PagesApi().home()
+
+// trieve information by a certain slug
+const pageData = await new PagesApi().page({slug: 'the/slug/of/the/page'})
 ```
 
 ## Documentation for API Endpoints
@@ -31,30 +33,8 @@ All URIs are relative to *https://api.flyo.cloud/nitro*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Nitrocms.ConfigApi* | [**config**](docs/ConfigApi.md#config) | **GET** /config | Get Config
-*Nitrocms.PagesApi* | [**home**](docs/PagesApi.md#home) | **GET** /pages/home | Get Home
-*Nitrocms.PagesApi* | [**pages**](docs/PagesApi.md#pages) | **GET** /pages | Get Pages
-
-
-## Documentation for Models
-
- - [Nitrocms.Block](docs/Block.md)
- - [Nitrocms.BlockSlotsInner](docs/BlockSlotsInner.md)
- - [Nitrocms.Config200Response](docs/Config200Response.md)
- - [Nitrocms.Config200ResponseNav](docs/Config200ResponseNav.md)
- - [Nitrocms.Config200ResponseNitro](docs/Config200ResponseNitro.md)
- - [Nitrocms.Page](docs/Page.md)
- - [Nitrocms.PagesInner](docs/PagesInner.md)
-
-
-## Documentation for Authorization
-
-
-
-### ApiKeyAuth
-
-
-- **Type**: API key
-- **API key parameter name**: token
-- **Location**: URL query string
-
+*ConfigApi* | [**config**](docs/ConfigApi.md#config) | **GET** /config | Get Config
+*PagesApi* | [**home**](docs/PagesApi.md#home) | **GET** /pages/home | Get Home
+*PagesApi* | [**pages**](docs/PagesApi.md#pages) | **GET** /pages | Get Pages
+*SitemapApi* | [**pages**](docs/SitemapApi.md) | **GET** /sitemap | Get Pages
+*ContentApi* | [**pages**](docs/ContentApi.md) | **PUT** /content/{pageId} | Put Content
