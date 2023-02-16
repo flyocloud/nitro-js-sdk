@@ -1,7 +1,7 @@
 # nitrocms
 
 ```
-yarn add @flyodev/nitrocms
+yarn add @flyodev/nitrocms-js
 ```
 
 ## Getting Started
