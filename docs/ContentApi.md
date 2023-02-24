@@ -1,10 +1,10 @@
 # Nitrocms.ContentApi
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
+All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**putContent**](ContentApi.md#putContent) | **PUT** /content/{pageId} | Put Content
+[**putContent**](ContentApi.md#putContent) | **PUT** /content/{pageId} | Put content
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > putContent(pageId, opts)
 
-Put Content
+Put content
 
 ### Example
 

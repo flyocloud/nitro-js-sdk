@@ -1,11 +1,11 @@
 # Nitrocms.PagesApi
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
+All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**home**](PagesApi.md#home) | **GET** /pages/home | Get Home
-[**page**](PagesApi.md#page) | **GET** /pages | Get Page
+[**page**](PagesApi.md#page) | **GET** /pages | Get page by slug
 
 
 
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > Page home()
 
 Get Home
+
+Returns the homepage from the site.
 
 ### Example
 
@@ -57,7 +59,9 @@ This endpoint does not need any parameter.
 
 > Page page(opts)
 
-Get Page
+Get page by slug
+
+Returns all informations from a given page by either a slug or a path which is the same as the slug with a leading slash.
 
 ### Example
 

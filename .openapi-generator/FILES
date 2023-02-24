@@ -5,6 +5,7 @@ docs/BlockSlotsInner.md
 docs/Config200Response.md
 docs/Config200ResponseNav.md
 docs/Config200ResponseNitro.md
+docs/Config200ResponsePagesInner.md
 docs/ConfigApi.md
 docs/Content.md
 docs/ContentApi.md
@@ -13,6 +14,7 @@ docs/Entity200Response.md
 docs/Entity200ResponseEntity.md
 docs/Entity200ResponseEntityEntityMetric.md
 docs/Page.md
+docs/PageMetaJson.md
 docs/PagesApi.md
 docs/PagesInner.md
 docs/Sitemap200ResponseInner.md
@@ -29,10 +31,12 @@ src/model/BlockSlotsInner.js
 src/model/Config200Response.js
 src/model/Config200ResponseNav.js
 src/model/Config200ResponseNitro.js
+src/model/Config200ResponsePagesInner.js
 src/model/Content.js
 src/model/Entity200Response.js
 src/model/Entity200ResponseEntity.js
 src/model/Entity200ResponseEntityEntityMetric.js
 src/model/Page.js
+src/model/PageMetaJson.js
 src/model/PagesInner.js
 src/model/Sitemap200ResponseInner.js

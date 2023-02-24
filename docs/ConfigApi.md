@@ -1,6 +1,6 @@
 # Nitrocms.ConfigApi
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
+All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get Config
 
-Returns all relevant config data to run a site.
+Return the nitro cms config including pages, paths and everything which is required for a layout.
 
 ### Example
 

@@ -1,6 +1,6 @@
 # Nitrocms.SitemapApi
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
+All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,6 +13,8 @@ Method | HTTP request | Description
 > [Sitemap200ResponseInner] sitemap()
 
 Get Sitemap
+
+Get all entities to build a sitemap. Pages are not included.
 
 ### Example
 

@@ -1,10 +1,10 @@
 # Nitrocms.EntitiesApi
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
+All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**entity**](EntitiesApi.md#entity) | **GET** /entities/{uniqueid} | Get Entity
+[**entity**](EntitiesApi.md#entity) | **GET** /entities/{uniqueid} | Get entity by uniqueid
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > Entity200Response entity(uniqueid)
 
-Get Entity
+Get entity by uniqueid
 
 ### Example
 
