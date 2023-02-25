@@ -5,7 +5,6 @@ docs/BlockSlotsInner.md
 docs/Config200Response.md
 docs/Config200ResponseNav.md
 docs/Config200ResponseNitro.md
-docs/Config200ResponsePagesInner.md
 docs/ConfigApi.md
 docs/Content.md
 docs/ContentApi.md
@@ -31,7 +30,6 @@ src/model/BlockSlotsInner.js
 src/model/Config200Response.js
 src/model/Config200ResponseNav.js
 src/model/Config200ResponseNitro.js
-src/model/Config200ResponsePagesInner.js
 src/model/Content.js
 src/model/Entity200Response.js
 src/model/Entity200ResponseEntity.js

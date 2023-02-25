@@ -18,7 +18,6 @@ import BlockSlotsInner from './model/BlockSlotsInner';
 import Config200Response from './model/Config200Response';
 import Config200ResponseNav from './model/Config200ResponseNav';
 import Config200ResponseNitro from './model/Config200ResponseNitro';
-import Config200ResponsePagesInner from './model/Config200ResponsePagesInner';
 import Content from './model/Content';
 import Entity200Response from './model/Entity200Response';
 import Entity200ResponseEntity from './model/Entity200ResponseEntity';
@@ -101,12 +100,6 @@ export {
      * @property {module:model/Config200ResponseNitro}
      */
     Config200ResponseNitro,
-
-    /**
-     * The Config200ResponsePagesInner model constructor.
-     * @property {module:model/Config200ResponsePagesInner}
-     */
-    Config200ResponsePagesInner,
 
     /**
      * The Content model constructor.

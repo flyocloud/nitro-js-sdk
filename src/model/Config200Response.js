@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import Config200ResponseNav from './Config200ResponseNav';
 import Config200ResponseNitro from './Config200ResponseNitro';
-import Config200ResponsePagesInner from './Config200ResponsePagesInner';
 
 /**
  * The Config200Response model module.
@@ -54,7 +53,7 @@ class Config200Response {
                 obj['nitro'] = Config200ResponseNitro.constructFromObject(data['nitro']);
             }
             if (data.hasOwnProperty('pages')) {
-                obj['pages'] = ApiClient.convertToType(data['pages'], [Config200ResponsePagesInner]);
+                obj['pages'] = ApiClient.convertToType(data['pages'], ['String']);
             }
             if (data.hasOwnProperty('nav')) {
                 obj['nav'] = Config200ResponseNav.constructFromObject(data['nav']);
@@ -76,15 +75,9 @@ class Config200Response {
         if (data['nitro']) { // data not null
           Config200ResponseNitro.validateJSON(data['nitro']);
         }
-        if (data['pages']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['pages'])) {
-                throw new Error("Expected the field `pages` to be an array in the JSON data but got " + data['pages']);
-            }
-            // validate the optional field `pages` (array)
-            for (const item of data['pages']) {
-                Config200ResponsePagesInner.validateJsonObject(item);
-            };
+        // ensure the json data is an array
+        if (!Array.isArray(data['pages'])) {
+            throw new Error("Expected the field `pages` to be an array in the JSON data but got " + data['pages']);
         }
         // validate the optional field `nav`
         if (data['nav']) { // data not null
@@ -105,7 +98,7 @@ class Config200Response {
 Config200Response.prototype['nitro'] = undefined;
 
 /**
- * @member {Array.<module:model/Config200ResponsePagesInner>} pages
+ * @member {Array.<String>} pages
  */
 Config200Response.prototype['pages'] = undefined;
 
