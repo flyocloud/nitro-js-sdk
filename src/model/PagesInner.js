@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import ContainerPageProperty from './ContainerPageProperty';
 
 /**
  * The PagesInner model module.
@@ -62,6 +63,9 @@ class PagesInner {
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
+            if (data.hasOwnProperty('properties')) {
+                obj['properties'] = ContainerPageProperty.constructFromObject(data['properties']);
+            }
             if (data.hasOwnProperty('children')) {
                 obj['children'] = ApiClient.convertToType(data['children'], [PagesInner]);
             }
@@ -94,6 +98,10 @@ class PagesInner {
         // ensure the json data is a string
         if (data['path'] && !(typeof data['path'] === 'string' || data['path'] instanceof String)) {
             throw new Error("Expected the field `path` to be a primitive type in the JSON string but got " + data['path']);
+        }
+        // validate the optional field `properties`
+        if (data['properties']) { // data not null
+          ContainerPageProperty.validateJSON(data['properties']);
         }
         if (data['children']) { // data not null
             // ensure the json data is an array
@@ -141,6 +149,11 @@ PagesInner.prototype['href'] = undefined;
  * @member {String} path
  */
 PagesInner.prototype['path'] = undefined;
+
+/**
+ * @member {module:model/ContainerPageProperty} properties
+ */
+PagesInner.prototype['properties'] = undefined;
 
 /**
  * @member {Array.<module:model/PagesInner>} children

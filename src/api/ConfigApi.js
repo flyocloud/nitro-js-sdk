@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Config200Response from '../model/Config200Response';
+import ConfigResponse from '../model/ConfigResponse';
 
 /**
 * Config service.
@@ -38,7 +38,7 @@ export default class ConfigApi {
     /**
      * Get Config
      * Return the nitro cms config including pages, paths and everything which is required for a layout.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Config200Response} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConfigResponse} and HTTP response
      */
     configWithHttpInfo() {
       let postBody = null;
@@ -55,7 +55,7 @@ export default class ConfigApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Config200Response;
+      let returnType = ConfigResponse;
       return this.apiClient.callApi(
         '/config', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -66,7 +66,7 @@ export default class ConfigApi {
     /**
      * Get Config
      * Return the nitro cms config including pages, paths and everything which is required for a layout.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Config200Response}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConfigResponse}
      */
     config() {
       return this.configWithHttpInfo()

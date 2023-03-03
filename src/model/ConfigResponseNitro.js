@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Config200ResponseNitro model module.
- * @module model/Config200ResponseNitro
+ * The ConfigResponseNitro model module.
+ * @module model/ConfigResponseNitro
  * @version 1.0.0-beta.127
  */
-class Config200ResponseNitro {
+class ConfigResponseNitro {
     /**
-     * Constructs a new <code>Config200ResponseNitro</code>.
-     * @alias module:model/Config200ResponseNitro
+     * Constructs a new <code>ConfigResponseNitro</code>.
+     * @alias module:model/ConfigResponseNitro
      */
     constructor() { 
         
-        Config200ResponseNitro.initialize(this);
+        ConfigResponseNitro.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class Config200ResponseNitro {
     }
 
     /**
-     * Constructs a <code>Config200ResponseNitro</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ConfigResponseNitro</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Config200ResponseNitro} obj Optional instance to populate.
-     * @return {module:model/Config200ResponseNitro} The populated <code>Config200ResponseNitro</code> instance.
+     * @param {module:model/ConfigResponseNitro} obj Optional instance to populate.
+     * @return {module:model/ConfigResponseNitro} The populated <code>ConfigResponseNitro</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Config200ResponseNitro();
+            obj = obj || new ConfigResponseNitro();
 
             if (data.hasOwnProperty('domain')) {
                 obj['domain'] = ApiClient.convertToType(data['domain'], 'String');
@@ -67,9 +67,9 @@ class Config200ResponseNitro {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Config200ResponseNitro</code>.
+     * Validates the JSON data with respect to <code>ConfigResponseNitro</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Config200ResponseNitro</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ConfigResponseNitro</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -96,33 +96,33 @@ class Config200ResponseNitro {
 /**
  * @member {String} domain
  */
-Config200ResponseNitro.prototype['domain'] = undefined;
+ConfigResponseNitro.prototype['domain'] = undefined;
 
 /**
  * @member {String} slug
  */
-Config200ResponseNitro.prototype['slug'] = undefined;
+ConfigResponseNitro.prototype['slug'] = undefined;
 
 /**
  * Whenever flyo generates new data, this version will be increased. This can be used for cache informnations.
  * @member {Number} version
  */
-Config200ResponseNitro.prototype['version'] = undefined;
+ConfigResponseNitro.prototype['version'] = undefined;
 
 /**
  * @member {Number} updated_at
  */
-Config200ResponseNitro.prototype['updated_at'] = undefined;
+ConfigResponseNitro.prototype['updated_at'] = undefined;
 
 /**
  * @member {String} language
  */
-Config200ResponseNitro.prototype['language'] = undefined;
+ConfigResponseNitro.prototype['language'] = undefined;
 
 
 
 
 
 
-export default Config200ResponseNitro;
+export default ConfigResponseNitro;
 

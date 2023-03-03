@@ -1,4 +1,4 @@
-# Nitrocms.BlockSlotsInner
+# Nitrocms.Slots
 
 ## Properties
 

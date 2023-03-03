@@ -1,4 +1,4 @@
-# Nitrocms.Config200ResponseNav
+# Nitrocms.ConfigResponseNav
 
 ## Properties
 

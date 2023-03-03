@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Entity200ResponseEntityEntityMetric model module.
- * @module model/Entity200ResponseEntityEntityMetric
+ * The EntityResponseEntityEntityMetric model module.
+ * @module model/EntityResponseEntityEntityMetric
  * @version 1.0.0-beta.127
  */
-class Entity200ResponseEntityEntityMetric {
+class EntityResponseEntityEntityMetric {
     /**
-     * Constructs a new <code>Entity200ResponseEntityEntityMetric</code>.
-     * @alias module:model/Entity200ResponseEntityEntityMetric
+     * Constructs a new <code>EntityResponseEntityEntityMetric</code>.
+     * @alias module:model/EntityResponseEntityEntityMetric
      */
     constructor() { 
         
-        Entity200ResponseEntityEntityMetric.initialize(this);
+        EntityResponseEntityEntityMetric.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class Entity200ResponseEntityEntityMetric {
     }
 
     /**
-     * Constructs a <code>Entity200ResponseEntityEntityMetric</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EntityResponseEntityEntityMetric</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Entity200ResponseEntityEntityMetric} obj Optional instance to populate.
-     * @return {module:model/Entity200ResponseEntityEntityMetric} The populated <code>Entity200ResponseEntityEntityMetric</code> instance.
+     * @param {module:model/EntityResponseEntityEntityMetric} obj Optional instance to populate.
+     * @return {module:model/EntityResponseEntityEntityMetric} The populated <code>EntityResponseEntityEntityMetric</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Entity200ResponseEntityEntityMetric();
+            obj = obj || new EntityResponseEntityEntityMetric();
 
             if (data.hasOwnProperty('api')) {
                 obj['api'] = ApiClient.convertToType(data['api'], 'String');
@@ -58,9 +58,9 @@ class Entity200ResponseEntityEntityMetric {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Entity200ResponseEntityEntityMetric</code>.
+     * Validates the JSON data with respect to <code>EntityResponseEntityEntityMetric</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Entity200ResponseEntityEntityMetric</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EntityResponseEntityEntityMetric</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -84,18 +84,18 @@ class Entity200ResponseEntityEntityMetric {
  * This url can be used to send a GET request from either frontend or backend.
  * @member {String} api
  */
-Entity200ResponseEntityEntityMetric.prototype['api'] = undefined;
+EntityResponseEntityEntityMetric.prototype['api'] = undefined;
 
 /**
  * Use the image as image src in order to track metrics for the given resource.
  * @member {String} image
  */
-Entity200ResponseEntityEntityMetric.prototype['image'] = undefined;
+EntityResponseEntityEntityMetric.prototype['image'] = undefined;
 
 
 
 
 
 
-export default Entity200ResponseEntityEntityMetric;
+export default EntityResponseEntityEntityMetric;
 

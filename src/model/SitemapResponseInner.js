@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Sitemap200ResponseInner model module.
- * @module model/Sitemap200ResponseInner
+ * The SitemapResponseInner model module.
+ * @module model/SitemapResponseInner
  * @version 1.0.0-beta.127
  */
-class Sitemap200ResponseInner {
+class SitemapResponseInner {
     /**
-     * Constructs a new <code>Sitemap200ResponseInner</code>.
-     * @alias module:model/Sitemap200ResponseInner
+     * Constructs a new <code>SitemapResponseInner</code>.
+     * @alias module:model/SitemapResponseInner
      */
     constructor() { 
         
-        Sitemap200ResponseInner.initialize(this);
+        SitemapResponseInner.initialize(this);
     }
 
     /**
@@ -37,21 +37,24 @@ class Sitemap200ResponseInner {
     }
 
     /**
-     * Constructs a <code>Sitemap200ResponseInner</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SitemapResponseInner</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Sitemap200ResponseInner} obj Optional instance to populate.
-     * @return {module:model/Sitemap200ResponseInner} The populated <code>Sitemap200ResponseInner</code> instance.
+     * @param {module:model/SitemapResponseInner} obj Optional instance to populate.
+     * @return {module:model/SitemapResponseInner} The populated <code>SitemapResponseInner</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Sitemap200ResponseInner();
+            obj = obj || new SitemapResponseInner();
 
             if (data.hasOwnProperty('entity_unique_id')) {
                 obj['entity_unique_id'] = ApiClient.convertToType(data['entity_unique_id'], 'String');
             }
             if (data.hasOwnProperty('entity_title')) {
                 obj['entity_title'] = ApiClient.convertToType(data['entity_title'], 'String');
+            }
+            if (data.hasOwnProperty('entity_teaser')) {
+                obj['entity_teaser'] = ApiClient.convertToType(data['entity_teaser'], 'String');
             }
             if (data.hasOwnProperty('entity_slug')) {
                 obj['entity_slug'] = ApiClient.convertToType(data['entity_slug'], 'String');
@@ -65,14 +68,17 @@ class Sitemap200ResponseInner {
             if (data.hasOwnProperty('entity_time_start')) {
                 obj['entity_time_start'] = ApiClient.convertToType(data['entity_time_start'], 'String');
             }
+            if (data.hasOwnProperty('entity_image')) {
+                obj['entity_image'] = ApiClient.convertToType(data['entity_image'], 'String');
+            }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>Sitemap200ResponseInner</code>.
+     * Validates the JSON data with respect to <code>SitemapResponseInner</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Sitemap200ResponseInner</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SitemapResponseInner</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -82,6 +88,10 @@ class Sitemap200ResponseInner {
         // ensure the json data is a string
         if (data['entity_title'] && !(typeof data['entity_title'] === 'string' || data['entity_title'] instanceof String)) {
             throw new Error("Expected the field `entity_title` to be a primitive type in the JSON string but got " + data['entity_title']);
+        }
+        // ensure the json data is a string
+        if (data['entity_teaser'] && !(typeof data['entity_teaser'] === 'string' || data['entity_teaser'] instanceof String)) {
+            throw new Error("Expected the field `entity_teaser` to be a primitive type in the JSON string but got " + data['entity_teaser']);
         }
         // ensure the json data is a string
         if (data['entity_slug'] && !(typeof data['entity_slug'] === 'string' || data['entity_slug'] instanceof String)) {
@@ -94,6 +104,10 @@ class Sitemap200ResponseInner {
         // ensure the json data is a string
         if (data['entity_time_start'] && !(typeof data['entity_time_start'] === 'string' || data['entity_time_start'] instanceof String)) {
             throw new Error("Expected the field `entity_time_start` to be a primitive type in the JSON string but got " + data['entity_time_start']);
+        }
+        // ensure the json data is a string
+        if (data['entity_image'] && !(typeof data['entity_image'] === 'string' || data['entity_image'] instanceof String)) {
+            throw new Error("Expected the field `entity_image` to be a primitive type in the JSON string but got " + data['entity_image']);
         }
 
         return true;
@@ -108,37 +122,47 @@ class Sitemap200ResponseInner {
  * Unique ID
  * @member {String} entity_unique_id
  */
-Sitemap200ResponseInner.prototype['entity_unique_id'] = undefined;
+SitemapResponseInner.prototype['entity_unique_id'] = undefined;
 
 /**
  * @member {String} entity_title
  */
-Sitemap200ResponseInner.prototype['entity_title'] = undefined;
+SitemapResponseInner.prototype['entity_title'] = undefined;
+
+/**
+ * @member {String} entity_teaser
+ */
+SitemapResponseInner.prototype['entity_teaser'] = undefined;
 
 /**
  * @member {String} entity_slug
  */
-Sitemap200ResponseInner.prototype['entity_slug'] = undefined;
+SitemapResponseInner.prototype['entity_slug'] = undefined;
 
 /**
  * @member {String} entity_type
  */
-Sitemap200ResponseInner.prototype['entity_type'] = undefined;
+SitemapResponseInner.prototype['entity_type'] = undefined;
 
 /**
  * @member {Number} entity_type_id
  */
-Sitemap200ResponseInner.prototype['entity_type_id'] = undefined;
+SitemapResponseInner.prototype['entity_type_id'] = undefined;
 
 /**
  * @member {String} entity_time_start
  */
-Sitemap200ResponseInner.prototype['entity_time_start'] = undefined;
+SitemapResponseInner.prototype['entity_time_start'] = undefined;
+
+/**
+ * @member {String} entity_image
+ */
+SitemapResponseInner.prototype['entity_image'] = undefined;
 
 
 
 
 
 
-export default Sitemap200ResponseInner;
+export default SitemapResponseInner;
 

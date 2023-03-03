@@ -16,15 +16,15 @@ import ApiClient from "../ApiClient";
 import SitemapResponseInner from '../model/SitemapResponseInner';
 
 /**
-* Sitemap service.
-* @module api/SitemapApi
+* Search service.
+* @module api/SearchApi
 * @version 1.0.0-beta.127
 */
-export default class SitemapApi {
+export default class SearchApi {
 
     /**
-    * Constructs a new SitemapApi. 
-    * @alias module:api/SitemapApi
+    * Constructs a new SearchApi. 
+    * @alias module:api/SearchApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -36,16 +36,22 @@ export default class SitemapApi {
 
 
     /**
-     * Get Sitemap
-     * Get all entities to build a sitemap. Pages are not included.
+     * Get Search
+     * Search inside pages and entities.
+     * @param {String} query The query which should be looked up in the site index.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SitemapResponseInner>} and HTTP response
      */
-    sitemapWithHttpInfo() {
+    searchWithHttpInfo(query) {
       let postBody = null;
+      // verify the required parameter 'query' is set
+      if (query === undefined || query === null) {
+        throw new Error("Missing the required parameter 'query' when calling search");
+      }
 
       let pathParams = {
       };
       let queryParams = {
+        'query': query
       };
       let headerParams = {
       };
@@ -57,19 +63,20 @@ export default class SitemapApi {
       let accepts = ['application/json'];
       let returnType = [SitemapResponseInner];
       return this.apiClient.callApi(
-        '/sitemap', 'GET',
+        '/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Get Sitemap
-     * Get all entities to build a sitemap. Pages are not included.
+     * Get Search
+     * Search inside pages and entities.
+     * @param {String} query The query which should be looked up in the site index.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SitemapResponseInner>}
      */
-    sitemap() {
-      return this.sitemapWithHttpInfo()
+    search(query) {
+      return this.searchWithHttpInfo(query)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

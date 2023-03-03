@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Entity200ResponseEntity from './Entity200ResponseEntity';
+import EntityResponseEntity from './EntityResponseEntity';
 
 /**
- * The Entity200Response model module.
- * @module model/Entity200Response
+ * The EntityResponse model module.
+ * @module model/EntityResponse
  * @version 1.0.0-beta.127
  */
-class Entity200Response {
+class EntityResponse {
     /**
-     * Constructs a new <code>Entity200Response</code>.
-     * @alias module:model/Entity200Response
+     * Constructs a new <code>EntityResponse</code>.
+     * @alias module:model/EntityResponse
      */
     constructor() { 
         
-        Entity200Response.initialize(this);
+        EntityResponse.initialize(this);
     }
 
     /**
@@ -38,18 +38,18 @@ class Entity200Response {
     }
 
     /**
-     * Constructs a <code>Entity200Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EntityResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Entity200Response} obj Optional instance to populate.
-     * @return {module:model/Entity200Response} The populated <code>Entity200Response</code> instance.
+     * @param {module:model/EntityResponse} obj Optional instance to populate.
+     * @return {module:model/EntityResponse} The populated <code>EntityResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Entity200Response();
+            obj = obj || new EntityResponse();
 
             if (data.hasOwnProperty('entity')) {
-                obj['entity'] = Entity200ResponseEntity.constructFromObject(data['entity']);
+                obj['entity'] = EntityResponseEntity.constructFromObject(data['entity']);
             }
             if (data.hasOwnProperty('model')) {
                 obj['model'] = ApiClient.convertToType(data['model'], Object);
@@ -62,14 +62,14 @@ class Entity200Response {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Entity200Response</code>.
+     * Validates the JSON data with respect to <code>EntityResponse</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Entity200Response</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EntityResponse</code>.
      */
     static validateJSON(data) {
         // validate the optional field `entity`
         if (data['entity']) { // data not null
-          Entity200ResponseEntity.validateJSON(data['entity']);
+          EntityResponseEntity.validateJSON(data['entity']);
         }
         // ensure the json data is a string
         if (data['language'] && !(typeof data['language'] === 'string' || data['language'] instanceof String)) {
@@ -85,25 +85,25 @@ class Entity200Response {
 
 
 /**
- * @member {module:model/Entity200ResponseEntity} entity
+ * @member {module:model/EntityResponseEntity} entity
  */
-Entity200Response.prototype['entity'] = undefined;
+EntityResponse.prototype['entity'] = undefined;
 
 /**
  * @member {Object} model
  */
-Entity200Response.prototype['model'] = undefined;
+EntityResponse.prototype['model'] = undefined;
 
 /**
- * Current language context for entite details
+ * Current language context for entity model data
  * @member {String} language
  */
-Entity200Response.prototype['language'] = undefined;
+EntityResponse.prototype['language'] = undefined;
 
 
 
 
 
 
-export default Entity200Response;
+export default EntityResponse;
 

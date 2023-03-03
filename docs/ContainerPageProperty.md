@@ -1,4 +1,4 @@
-# Nitrocms.Config200ResponsePagesInner
+# Nitrocms.ContainerPageProperty
 
 ## Properties
 

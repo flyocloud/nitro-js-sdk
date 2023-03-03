@@ -12,22 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Config200ResponseNav from './Config200ResponseNav';
-import Config200ResponseNitro from './Config200ResponseNitro';
+import ConfigResponseNav from './ConfigResponseNav';
+import ConfigResponseNitro from './ConfigResponseNitro';
 
 /**
- * The Config200Response model module.
- * @module model/Config200Response
+ * The ConfigResponse model module.
+ * @module model/ConfigResponse
  * @version 1.0.0-beta.127
  */
-class Config200Response {
+class ConfigResponse {
     /**
-     * Constructs a new <code>Config200Response</code>.
-     * @alias module:model/Config200Response
+     * Constructs a new <code>ConfigResponse</code>.
+     * @alias module:model/ConfigResponse
      */
     constructor() { 
         
-        Config200Response.initialize(this);
+        ConfigResponse.initialize(this);
     }
 
     /**
@@ -39,24 +39,27 @@ class Config200Response {
     }
 
     /**
-     * Constructs a <code>Config200Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ConfigResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Config200Response} obj Optional instance to populate.
-     * @return {module:model/Config200Response} The populated <code>Config200Response</code> instance.
+     * @param {module:model/ConfigResponse} obj Optional instance to populate.
+     * @return {module:model/ConfigResponse} The populated <code>ConfigResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Config200Response();
+            obj = obj || new ConfigResponse();
 
             if (data.hasOwnProperty('nitro')) {
-                obj['nitro'] = Config200ResponseNitro.constructFromObject(data['nitro']);
+                obj['nitro'] = ConfigResponseNitro.constructFromObject(data['nitro']);
             }
             if (data.hasOwnProperty('pages')) {
                 obj['pages'] = ApiClient.convertToType(data['pages'], ['String']);
             }
             if (data.hasOwnProperty('nav')) {
-                obj['nav'] = Config200ResponseNav.constructFromObject(data['nav']);
+                obj['nav'] = ConfigResponseNav.constructFromObject(data['nav']);
+            }
+            if (data.hasOwnProperty('containers')) {
+                obj['containers'] = ApiClient.convertToType(data['containers'], {'String': ConfigResponseNav});
             }
             if (data.hasOwnProperty('globals')) {
                 obj['globals'] = ApiClient.convertToType(data['globals'], Object);
@@ -66,14 +69,14 @@ class Config200Response {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Config200Response</code>.
+     * Validates the JSON data with respect to <code>ConfigResponse</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Config200Response</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ConfigResponse</code>.
      */
     static validateJSON(data) {
         // validate the optional field `nitro`
         if (data['nitro']) { // data not null
-          Config200ResponseNitro.validateJSON(data['nitro']);
+          ConfigResponseNitro.validateJSON(data['nitro']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['pages'])) {
@@ -81,7 +84,7 @@ class Config200Response {
         }
         // validate the optional field `nav`
         if (data['nav']) { // data not null
-          Config200ResponseNav.validateJSON(data['nav']);
+          ConfigResponseNav.validateJSON(data['nav']);
         }
 
         return true;
@@ -93,29 +96,34 @@ class Config200Response {
 
 
 /**
- * @member {module:model/Config200ResponseNitro} nitro
+ * @member {module:model/ConfigResponseNitro} nitro
  */
-Config200Response.prototype['nitro'] = undefined;
+ConfigResponse.prototype['nitro'] = undefined;
 
 /**
  * @member {Array.<String>} pages
  */
-Config200Response.prototype['pages'] = undefined;
+ConfigResponse.prototype['pages'] = undefined;
 
 /**
- * @member {module:model/Config200ResponseNav} nav
+ * @member {module:model/ConfigResponseNav} nav
  */
-Config200Response.prototype['nav'] = undefined;
+ConfigResponse.prototype['nav'] = undefined;
+
+/**
+ * @member {Object.<String, module:model/ConfigResponseNav>} containers
+ */
+ConfigResponse.prototype['containers'] = undefined;
 
 /**
  * @member {Object} globals
  */
-Config200Response.prototype['globals'] = undefined;
+ConfigResponse.prototype['globals'] = undefined;
 
 
 
 
 
 
-export default Config200Response;
+export default ConfigResponse;
 

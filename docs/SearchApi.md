@@ -1,20 +1,20 @@
-# Nitrocms.ConfigApi
+# Nitrocms.SearchApi
 
 All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**config**](ConfigApi.md#config) | **GET** /config | Get Config
+[**search**](SearchApi.md#search) | **GET** /search | Get Search
 
 
 
-## config
+## search
 
-> ConfigResponse config()
+> [SitemapResponseInner] search(query)
 
-Get Config
+Get Search
 
-Return the nitro cms config including pages, paths and everything which is required for a layout.
+Search inside pages and entities.
 
 ### Example
 
@@ -27,8 +27,9 @@ ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitrocms.ConfigApi();
-apiInstance.config().then((data) => {
+let apiInstance = new Nitrocms.SearchApi();
+let query = foobar; // String | The query which should be looked up in the site index.
+apiInstance.search(query).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -38,11 +39,14 @@ apiInstance.config().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| The query which should be looked up in the site index. | 
 
 ### Return type
 
-[**ConfigResponse**](ConfigResponse.md)
+[**[SitemapResponseInner]**](SitemapResponseInner.md)
 
 ### Authorization
 

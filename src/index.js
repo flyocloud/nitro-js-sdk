@@ -14,22 +14,26 @@
 
 import ApiClient from './ApiClient';
 import Block from './model/Block';
-import BlockSlotsInner from './model/BlockSlotsInner';
-import Config200Response from './model/Config200Response';
-import Config200ResponseNav from './model/Config200ResponseNav';
-import Config200ResponseNitro from './model/Config200ResponseNitro';
+import ConfigResponse from './model/ConfigResponse';
+import ConfigResponseNav from './model/ConfigResponseNav';
+import ConfigResponseNitro from './model/ConfigResponseNitro';
+import ContainerPageProperty from './model/ContainerPageProperty';
 import Content from './model/Content';
-import Entity200Response from './model/Entity200Response';
-import Entity200ResponseEntity from './model/Entity200ResponseEntity';
-import Entity200ResponseEntityEntityMetric from './model/Entity200ResponseEntityEntityMetric';
+import EntityResponse from './model/EntityResponse';
+import EntityResponseEntity from './model/EntityResponseEntity';
+import EntityResponseEntityEntityMetric from './model/EntityResponseEntityEntityMetric';
+import Meta from './model/Meta';
 import Page from './model/Page';
-import PageMetaJson from './model/PageMetaJson';
+import PageProperty from './model/PageProperty';
+import PagePropertyValue from './model/PagePropertyValue';
 import PagesInner from './model/PagesInner';
-import Sitemap200ResponseInner from './model/Sitemap200ResponseInner';
+import SitemapResponseInner from './model/SitemapResponseInner';
+import Slots from './model/Slots';
 import ConfigApi from './api/ConfigApi';
 import ContentApi from './api/ContentApi';
 import EntitiesApi from './api/EntitiesApi';
 import PagesApi from './api/PagesApi';
+import SearchApi from './api/SearchApi';
 import SitemapApi from './api/SitemapApi';
 
 
@@ -78,28 +82,28 @@ export {
     Block,
 
     /**
-     * The BlockSlotsInner model constructor.
-     * @property {module:model/BlockSlotsInner}
+     * The ConfigResponse model constructor.
+     * @property {module:model/ConfigResponse}
      */
-    BlockSlotsInner,
+    ConfigResponse,
 
     /**
-     * The Config200Response model constructor.
-     * @property {module:model/Config200Response}
+     * The ConfigResponseNav model constructor.
+     * @property {module:model/ConfigResponseNav}
      */
-    Config200Response,
+    ConfigResponseNav,
 
     /**
-     * The Config200ResponseNav model constructor.
-     * @property {module:model/Config200ResponseNav}
+     * The ConfigResponseNitro model constructor.
+     * @property {module:model/ConfigResponseNitro}
      */
-    Config200ResponseNav,
+    ConfigResponseNitro,
 
     /**
-     * The Config200ResponseNitro model constructor.
-     * @property {module:model/Config200ResponseNitro}
+     * The ContainerPageProperty model constructor.
+     * @property {module:model/ContainerPageProperty}
      */
-    Config200ResponseNitro,
+    ContainerPageProperty,
 
     /**
      * The Content model constructor.
@@ -108,22 +112,28 @@ export {
     Content,
 
     /**
-     * The Entity200Response model constructor.
-     * @property {module:model/Entity200Response}
+     * The EntityResponse model constructor.
+     * @property {module:model/EntityResponse}
      */
-    Entity200Response,
+    EntityResponse,
 
     /**
-     * The Entity200ResponseEntity model constructor.
-     * @property {module:model/Entity200ResponseEntity}
+     * The EntityResponseEntity model constructor.
+     * @property {module:model/EntityResponseEntity}
      */
-    Entity200ResponseEntity,
+    EntityResponseEntity,
 
     /**
-     * The Entity200ResponseEntityEntityMetric model constructor.
-     * @property {module:model/Entity200ResponseEntityEntityMetric}
+     * The EntityResponseEntityEntityMetric model constructor.
+     * @property {module:model/EntityResponseEntityEntityMetric}
      */
-    Entity200ResponseEntityEntityMetric,
+    EntityResponseEntityEntityMetric,
+
+    /**
+     * The Meta model constructor.
+     * @property {module:model/Meta}
+     */
+    Meta,
 
     /**
      * The Page model constructor.
@@ -132,10 +142,16 @@ export {
     Page,
 
     /**
-     * The PageMetaJson model constructor.
-     * @property {module:model/PageMetaJson}
+     * The PageProperty model constructor.
+     * @property {module:model/PageProperty}
      */
-    PageMetaJson,
+    PageProperty,
+
+    /**
+     * The PagePropertyValue model constructor.
+     * @property {module:model/PagePropertyValue}
+     */
+    PagePropertyValue,
 
     /**
      * The PagesInner model constructor.
@@ -144,10 +160,16 @@ export {
     PagesInner,
 
     /**
-     * The Sitemap200ResponseInner model constructor.
-     * @property {module:model/Sitemap200ResponseInner}
+     * The SitemapResponseInner model constructor.
+     * @property {module:model/SitemapResponseInner}
      */
-    Sitemap200ResponseInner,
+    SitemapResponseInner,
+
+    /**
+     * The Slots model constructor.
+     * @property {module:model/Slots}
+     */
+    Slots,
 
     /**
     * The ConfigApi service constructor.
@@ -172,6 +194,12 @@ export {
     * @property {module:api/PagesApi}
     */
     PagesApi,
+
+    /**
+    * The SearchApi service constructor.
+    * @property {module:api/SearchApi}
+    */
+    SearchApi,
 
     /**
     * The SitemapApi service constructor.

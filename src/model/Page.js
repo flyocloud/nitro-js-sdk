@@ -13,7 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import Block from './Block';
-import PageMetaJson from './PageMetaJson';
+import Meta from './Meta';
+import PageProperty from './PageProperty';
 
 /**
  * The Page model module.
@@ -77,7 +78,10 @@ class Page {
                 obj['is_visible'] = ApiClient.convertToType(data['is_visible'], 'Number');
             }
             if (data.hasOwnProperty('meta_json')) {
-                obj['meta_json'] = PageMetaJson.constructFromObject(data['meta_json']);
+                obj['meta_json'] = Meta.constructFromObject(data['meta_json']);
+            }
+            if (data.hasOwnProperty('properties')) {
+                obj['properties'] = ApiClient.convertToType(data['properties'], {'String': PageProperty});
             }
             if (data.hasOwnProperty('uid')) {
                 obj['uid'] = ApiClient.convertToType(data['uid'], 'String');
@@ -87,6 +91,9 @@ class Page {
             }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
+            }
+            if (data.hasOwnProperty('container')) {
+                obj['container'] = ApiClient.convertToType(data['container'], 'String');
             }
         }
         return obj;
@@ -118,7 +125,7 @@ class Page {
         }
         // validate the optional field `meta_json`
         if (data['meta_json']) { // data not null
-          PageMetaJson.validateJSON(data['meta_json']);
+          Meta.validateJSON(data['meta_json']);
         }
         // ensure the json data is a string
         if (data['uid'] && !(typeof data['uid'] === 'string' || data['uid'] instanceof String)) {
@@ -131,6 +138,10 @@ class Page {
         // ensure the json data is a string
         if (data['target'] && !(typeof data['target'] === 'string' || data['target'] instanceof String)) {
             throw new Error("Expected the field `target` to be a primitive type in the JSON string but got " + data['target']);
+        }
+        // ensure the json data is a string
+        if (data['container'] && !(typeof data['container'] === 'string' || data['container'] instanceof String)) {
+            throw new Error("Expected the field `container` to be a primitive type in the JSON string but got " + data['container']);
         }
 
         return true;
@@ -187,9 +198,14 @@ Page.prototype['updated_at'] = undefined;
 Page.prototype['is_visible'] = undefined;
 
 /**
- * @member {module:model/PageMetaJson} meta_json
+ * @member {module:model/Meta} meta_json
  */
 Page.prototype['meta_json'] = undefined;
+
+/**
+ * @member {Object.<String, module:model/PageProperty>} properties
+ */
+Page.prototype['properties'] = undefined;
 
 /**
  * A unique identifier for the page
@@ -208,6 +224,12 @@ Page.prototype['type'] = undefined;
  * @member {String} target
  */
 Page.prototype['target'] = undefined;
+
+/**
+ * The container this page belongs, by default all pages belong to the default container which is the main nav.
+ * @member {String} container
+ */
+Page.prototype['container'] = undefined;
 
 
 

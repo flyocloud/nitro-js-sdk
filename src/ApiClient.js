@@ -596,10 +596,6 @@ class ApiClient {
             {
               'url': "https://edgeapi.flyo.cloud/nitro",
               'description': "Production Server",
-            },
-            {
-              'url': "https://edgeapi.flyo.cloud/nitro",
-              'description': "Edge Server",
             }
       ];
     }

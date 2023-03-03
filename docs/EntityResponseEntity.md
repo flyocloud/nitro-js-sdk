@@ -1,4 +1,4 @@
-# Nitrocms.Entity200ResponseEntity
+# Nitrocms.EntityResponseEntity
 
 ## Properties
 
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | An identifier from the database index | [optional] 
 **version** | **Number** | A sequential index as version of the item | [optional] 
-**entityMetric** | [**Entity200ResponseEntityEntityMetric**](Entity200ResponseEntityEntityMetric.md) |  | [optional] 
+**entityMetric** | [**EntityResponseEntityEntityMetric**](EntityResponseEntityEntityMetric.md) |  | [optional] 
 **entityUniqueId** | **String** |  | [optional] 
 **entityId** | **String** |  | [optional] 
 **entityImage** | **String** |  | [optional] 

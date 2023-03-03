@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BlockSlotsInner from './BlockSlotsInner';
+import Slots from './Slots';
 
 /**
  * The Block model module.
@@ -52,10 +52,10 @@ class Block {
                 obj['items'] = ApiClient.convertToType(data['items'], [Object]);
             }
             if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], Object);
+                obj['content'] = ApiClient.convertToType(data['content'], {'String': Object});
             }
             if (data.hasOwnProperty('config')) {
-                obj['config'] = ApiClient.convertToType(data['config'], Object);
+                obj['config'] = ApiClient.convertToType(data['config'], {'String': Object});
             }
             if (data.hasOwnProperty('identifier')) {
                 obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
@@ -67,7 +67,7 @@ class Block {
                 obj['component'] = ApiClient.convertToType(data['component'], 'String');
             }
             if (data.hasOwnProperty('slots')) {
-                obj['slots'] = ApiClient.convertToType(data['slots'], [BlockSlotsInner]);
+                obj['slots'] = ApiClient.convertToType(data['slots'], {'String': Slots});
             }
         }
         return obj;
@@ -95,16 +95,6 @@ class Block {
         if (data['component'] && !(typeof data['component'] === 'string' || data['component'] instanceof String)) {
             throw new Error("Expected the field `component` to be a primitive type in the JSON string but got " + data['component']);
         }
-        if (data['slots']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['slots'])) {
-                throw new Error("Expected the field `slots` to be an array in the JSON data but got " + data['slots']);
-            }
-            // validate the optional field `slots` (array)
-            for (const item of data['slots']) {
-                BlockSlotsInner.validateJsonObject(item);
-            };
-        }
 
         return true;
     }
@@ -122,13 +112,13 @@ Block.prototype['items'] = undefined;
 
 /**
  * Text Contents
- * @member {Object} content
+ * @member {Object.<String, Object>} content
  */
 Block.prototype['content'] = undefined;
 
 /**
- * Config Content
- * @member {Object} config
+ * Configuration Options
+ * @member {Object.<String, Object>} config
  */
 Block.prototype['config'] = undefined;
 
@@ -151,7 +141,7 @@ Block.prototype['uid'] = undefined;
 Block.prototype['component'] = undefined;
 
 /**
- * @member {Array.<module:model/BlockSlotsInner>} slots
+ * @member {Object.<String, module:model/Slots>} slots
  */
 Block.prototype['slots'] = undefined;
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## sitemap
 
-> [Sitemap200ResponseInner] sitemap()
+> [SitemapResponseInner] sitemap()
 
 Get Sitemap
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Sitemap200ResponseInner]**](Sitemap200ResponseInner.md)
+[**[SitemapResponseInner]**](SitemapResponseInner.md)
 
 ### Authorization
 

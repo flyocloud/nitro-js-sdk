@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## entity
 
-> Entity200Response entity(uniqueid)
+> EntityResponse entity(uniqueid)
 
 Get entity by uniqueid
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Entity200Response**](Entity200Response.md)
+[**EntityResponse**](EntityResponse.md)
 
 ### Authorization
 

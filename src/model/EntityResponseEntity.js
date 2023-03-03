@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Entity200ResponseEntityEntityMetric from './Entity200ResponseEntityEntityMetric';
+import EntityResponseEntityEntityMetric from './EntityResponseEntityEntityMetric';
 
 /**
- * The Entity200ResponseEntity model module.
- * @module model/Entity200ResponseEntity
+ * The EntityResponseEntity model module.
+ * @module model/EntityResponseEntity
  * @version 1.0.0-beta.127
  */
-class Entity200ResponseEntity {
+class EntityResponseEntity {
     /**
-     * Constructs a new <code>Entity200ResponseEntity</code>.
-     * @alias module:model/Entity200ResponseEntity
+     * Constructs a new <code>EntityResponseEntity</code>.
+     * @alias module:model/EntityResponseEntity
      */
     constructor() { 
         
-        Entity200ResponseEntity.initialize(this);
+        EntityResponseEntity.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class Entity200ResponseEntity {
     }
 
     /**
-     * Constructs a <code>Entity200ResponseEntity</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EntityResponseEntity</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Entity200ResponseEntity} obj Optional instance to populate.
-     * @return {module:model/Entity200ResponseEntity} The populated <code>Entity200ResponseEntity</code> instance.
+     * @param {module:model/EntityResponseEntity} obj Optional instance to populate.
+     * @return {module:model/EntityResponseEntity} The populated <code>EntityResponseEntity</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Entity200ResponseEntity();
+            obj = obj || new EntityResponseEntity();
 
             if (data.hasOwnProperty('_id')) {
                 obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
@@ -55,7 +55,7 @@ class Entity200ResponseEntity {
                 obj['_version'] = ApiClient.convertToType(data['_version'], 'Number');
             }
             if (data.hasOwnProperty('entity_metric')) {
-                obj['entity_metric'] = Entity200ResponseEntityEntityMetric.constructFromObject(data['entity_metric']);
+                obj['entity_metric'] = EntityResponseEntityEntityMetric.constructFromObject(data['entity_metric']);
             }
             if (data.hasOwnProperty('entity_unique_id')) {
                 obj['entity_unique_id'] = ApiClient.convertToType(data['entity_unique_id'], 'String');
@@ -95,9 +95,9 @@ class Entity200ResponseEntity {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Entity200ResponseEntity</code>.
+     * Validates the JSON data with respect to <code>EntityResponseEntity</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Entity200ResponseEntity</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EntityResponseEntity</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -106,7 +106,7 @@ class Entity200ResponseEntity {
         }
         // validate the optional field `entity_metric`
         if (data['entity_metric']) { // data not null
-          Entity200ResponseEntityEntityMetric.validateJSON(data['entity_metric']);
+          EntityResponseEntityEntityMetric.validateJSON(data['entity_metric']);
         }
         // ensure the json data is a string
         if (data['entity_unique_id'] && !(typeof data['entity_unique_id'] === 'string' || data['entity_unique_id'] instanceof String)) {
@@ -161,78 +161,78 @@ class Entity200ResponseEntity {
  * An identifier from the database index
  * @member {String} _id
  */
-Entity200ResponseEntity.prototype['_id'] = undefined;
+EntityResponseEntity.prototype['_id'] = undefined;
 
 /**
  * A sequential index as version of the item
  * @member {Number} _version
  */
-Entity200ResponseEntity.prototype['_version'] = undefined;
+EntityResponseEntity.prototype['_version'] = undefined;
 
 /**
- * @member {module:model/Entity200ResponseEntityEntityMetric} entity_metric
+ * @member {module:model/EntityResponseEntityEntityMetric} entity_metric
  */
-Entity200ResponseEntity.prototype['entity_metric'] = undefined;
+EntityResponseEntity.prototype['entity_metric'] = undefined;
 
 /**
  * @member {String} entity_unique_id
  */
-Entity200ResponseEntity.prototype['entity_unique_id'] = undefined;
+EntityResponseEntity.prototype['entity_unique_id'] = undefined;
 
 /**
  * @member {String} entity_id
  */
-Entity200ResponseEntity.prototype['entity_id'] = undefined;
+EntityResponseEntity.prototype['entity_id'] = undefined;
 
 /**
  * @member {String} entity_image
  */
-Entity200ResponseEntity.prototype['entity_image'] = undefined;
+EntityResponseEntity.prototype['entity_image'] = undefined;
 
 /**
  * @member {String} entity_slug
  */
-Entity200ResponseEntity.prototype['entity_slug'] = undefined;
+EntityResponseEntity.prototype['entity_slug'] = undefined;
 
 /**
  * @member {String} entity_teaser
  */
-Entity200ResponseEntity.prototype['entity_teaser'] = undefined;
+EntityResponseEntity.prototype['entity_teaser'] = undefined;
 
 /**
  * @member {String} entity_time_end
  */
-Entity200ResponseEntity.prototype['entity_time_end'] = undefined;
+EntityResponseEntity.prototype['entity_time_end'] = undefined;
 
 /**
  * @member {String} entity_time_start
  */
-Entity200ResponseEntity.prototype['entity_time_start'] = undefined;
+EntityResponseEntity.prototype['entity_time_start'] = undefined;
 
 /**
  * @member {String} entity_title
  */
-Entity200ResponseEntity.prototype['entity_title'] = undefined;
+EntityResponseEntity.prototype['entity_title'] = undefined;
 
 /**
  * @member {String} entity_type
  */
-Entity200ResponseEntity.prototype['entity_type'] = undefined;
+EntityResponseEntity.prototype['entity_type'] = undefined;
 
 /**
  * @member {Number} entity_type_id
  */
-Entity200ResponseEntity.prototype['entity_type_id'] = undefined;
+EntityResponseEntity.prototype['entity_type_id'] = undefined;
 
 /**
  * @member {String} updated_at
  */
-Entity200ResponseEntity.prototype['updated_at'] = undefined;
+EntityResponseEntity.prototype['updated_at'] = undefined;
 
 
 
 
 
 
-export default Entity200ResponseEntity;
+export default EntityResponseEntity;
 

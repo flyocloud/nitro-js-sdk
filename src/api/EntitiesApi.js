@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Entity200Response from '../model/Entity200Response';
+import EntityResponse from '../model/EntityResponse';
 
 /**
 * Entities service.
@@ -38,7 +38,7 @@ export default class EntitiesApi {
     /**
      * Get entity by uniqueid
      * @param {String} uniqueid The unique id of the given entity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Entity200Response} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EntityResponse} and HTTP response
      */
     entityWithHttpInfo(uniqueid) {
       let postBody = null;
@@ -60,7 +60,7 @@ export default class EntitiesApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Entity200Response;
+      let returnType = EntityResponse;
       return this.apiClient.callApi(
         '/entities/{uniqueid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -71,7 +71,7 @@ export default class EntitiesApi {
     /**
      * Get entity by uniqueid
      * @param {String} uniqueid The unique id of the given entity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Entity200Response}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EntityResponse}
      */
     entity(uniqueid) {
       return this.entityWithHttpInfo(uniqueid)

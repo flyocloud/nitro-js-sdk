@@ -1,4 +1,4 @@
-# Nitrocms.PageMetaJson
+# Nitrocms.Meta
 
 ## Properties
 

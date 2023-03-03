@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The PageMetaJson model module.
- * @module model/PageMetaJson
+ * The Meta model module.
+ * @module model/Meta
  * @version 1.0.0-beta.127
  */
-class PageMetaJson {
+class Meta {
     /**
-     * Constructs a new <code>PageMetaJson</code>.
-     * @alias module:model/PageMetaJson
+     * Constructs a new <code>Meta</code>.
+     * @alias module:model/Meta
      */
     constructor() { 
         
-        PageMetaJson.initialize(this);
+        Meta.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class PageMetaJson {
     }
 
     /**
-     * Constructs a <code>PageMetaJson</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Meta</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PageMetaJson} obj Optional instance to populate.
-     * @return {module:model/PageMetaJson} The populated <code>PageMetaJson</code> instance.
+     * @param {module:model/Meta} obj Optional instance to populate.
+     * @return {module:model/Meta} The populated <code>Meta</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new PageMetaJson();
+            obj = obj || new Meta();
 
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -61,9 +61,9 @@ class PageMetaJson {
     }
 
     /**
-     * Validates the JSON data with respect to <code>PageMetaJson</code>.
+     * Validates the JSON data with respect to <code>Meta</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PageMetaJson</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Meta</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -91,24 +91,24 @@ class PageMetaJson {
  * Meta Description
  * @member {String} description
  */
-PageMetaJson.prototype['description'] = undefined;
+Meta.prototype['description'] = undefined;
 
 /**
  * Path to meta image
  * @member {String} image
  */
-PageMetaJson.prototype['image'] = undefined;
+Meta.prototype['image'] = undefined;
 
 /**
  * Meta page title
  * @member {String} title
  */
-PageMetaJson.prototype['title'] = undefined;
+Meta.prototype['title'] = undefined;
 
 
 
 
 
 
-export default PageMetaJson;
+export default Meta;
 

@@ -1,6 +1,6 @@
 {
   "name": "@flyodev/nitrocms-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Flyo Nitro CMS JS SDK",
   "license": "MIT",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
     "build": "babel src -d dist",
     "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive",
-    "release" : "npm publish --access=public"
+    "release": "npm publish --access=public"
   },
   "browser": {
     "fs": false

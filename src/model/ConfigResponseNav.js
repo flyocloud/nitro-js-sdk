@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import PagesInner from './PagesInner';
 
 /**
- * The Config200ResponseNav model module.
- * @module model/Config200ResponseNav
+ * The ConfigResponseNav model module.
+ * @module model/ConfigResponseNav
  * @version 1.0.0-beta.127
  */
-class Config200ResponseNav {
+class ConfigResponseNav {
     /**
-     * Constructs a new <code>Config200ResponseNav</code>.
-     * @alias module:model/Config200ResponseNav
+     * Constructs a new <code>ConfigResponseNav</code>.
+     * @alias module:model/ConfigResponseNav
      */
     constructor() { 
         
-        Config200ResponseNav.initialize(this);
+        ConfigResponseNav.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class Config200ResponseNav {
     }
 
     /**
-     * Constructs a <code>Config200ResponseNav</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ConfigResponseNav</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Config200ResponseNav} obj Optional instance to populate.
-     * @return {module:model/Config200ResponseNav} The populated <code>Config200ResponseNav</code> instance.
+     * @param {module:model/ConfigResponseNav} obj Optional instance to populate.
+     * @return {module:model/ConfigResponseNav} The populated <code>ConfigResponseNav</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Config200ResponseNav();
+            obj = obj || new ConfigResponseNav();
 
             if (data.hasOwnProperty('items')) {
                 obj['items'] = ApiClient.convertToType(data['items'], [PagesInner]);
@@ -56,9 +56,9 @@ class Config200ResponseNav {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Config200ResponseNav</code>.
+     * Validates the JSON data with respect to <code>ConfigResponseNav</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Config200ResponseNav</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ConfigResponseNav</code>.
      */
     static validateJSON(data) {
         if (data['items']) { // data not null
@@ -83,12 +83,12 @@ class Config200ResponseNav {
 /**
  * @member {Array.<module:model/PagesInner>} items
  */
-Config200ResponseNav.prototype['items'] = undefined;
+ConfigResponseNav.prototype['items'] = undefined;
 
 
 
 
 
 
-export default Config200ResponseNav;
+export default ConfigResponseNav;
 

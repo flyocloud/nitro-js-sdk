@@ -1,4 +1,4 @@
-# Nitrocms.Config200ResponseNitro
+# Nitrocms.ConfigResponseNitro
 
 ## Properties
 
