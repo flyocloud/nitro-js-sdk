@@ -1,6 +1,6 @@
 # Nitrocms.ConfigApi
 
-All URIs are relative to *https://edgeapi.flyo.cloud/nitro*
+All URIs are relative to *https://api.flyo.cloud/nitro*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
