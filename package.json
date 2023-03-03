@@ -1,6 +1,6 @@
 {
   "name": "@flyodev/nitrocms-js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Flyo Nitro CMS JS SDK",
   "license": "MIT",
   "main": "dist/index.js",

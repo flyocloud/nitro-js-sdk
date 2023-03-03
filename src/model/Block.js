@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import Slots from './Slots';
+import BlockSlots from './BlockSlots';
 
 /**
  * The Block model module.
@@ -52,10 +52,10 @@ class Block {
                 obj['items'] = ApiClient.convertToType(data['items'], [Object]);
             }
             if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], {'String': Object});
+                obj['content'] = ApiClient.convertToType(data['content'], Object);
             }
             if (data.hasOwnProperty('config')) {
-                obj['config'] = ApiClient.convertToType(data['config'], {'String': Object});
+                obj['config'] = ApiClient.convertToType(data['config'], Object);
             }
             if (data.hasOwnProperty('identifier')) {
                 obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
@@ -67,7 +67,7 @@ class Block {
                 obj['component'] = ApiClient.convertToType(data['component'], 'String');
             }
             if (data.hasOwnProperty('slots')) {
-                obj['slots'] = ApiClient.convertToType(data['slots'], {'String': Slots});
+                obj['slots'] = ApiClient.convertToType(data['slots'], {'String': BlockSlots});
             }
         }
         return obj;
@@ -112,13 +112,13 @@ Block.prototype['items'] = undefined;
 
 /**
  * Text Contents
- * @member {Object.<String, Object>} content
+ * @member {Object} content
  */
 Block.prototype['content'] = undefined;
 
 /**
  * Configuration Options
- * @member {Object.<String, Object>} config
+ * @member {Object} config
  */
 Block.prototype['config'] = undefined;
 
@@ -141,7 +141,7 @@ Block.prototype['uid'] = undefined;
 Block.prototype['component'] = undefined;
 
 /**
- * @member {Object.<String, module:model/Slots>} slots
+ * @member {Object.<String, module:model/BlockSlots>} slots
  */
 Block.prototype['slots'] = undefined;
 

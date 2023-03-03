@@ -14,6 +14,7 @@
 
 import ApiClient from './ApiClient';
 import Block from './model/Block';
+import BlockSlots from './model/BlockSlots';
 import ConfigResponse from './model/ConfigResponse';
 import ConfigResponseNav from './model/ConfigResponseNav';
 import ConfigResponseNitro from './model/ConfigResponseNitro';
@@ -28,7 +29,6 @@ import PageProperty from './model/PageProperty';
 import PagePropertyValue from './model/PagePropertyValue';
 import PagesInner from './model/PagesInner';
 import SitemapResponseInner from './model/SitemapResponseInner';
-import Slots from './model/Slots';
 import ConfigApi from './api/ConfigApi';
 import ContentApi from './api/ContentApi';
 import EntitiesApi from './api/EntitiesApi';
@@ -80,6 +80,12 @@ export {
      * @property {module:model/Block}
      */
     Block,
+
+    /**
+     * The BlockSlots model constructor.
+     * @property {module:model/BlockSlots}
+     */
+    BlockSlots,
 
     /**
      * The ConfigResponse model constructor.
@@ -164,12 +170,6 @@ export {
      * @property {module:model/SitemapResponseInner}
      */
     SitemapResponseInner,
-
-    /**
-     * The Slots model constructor.
-     * @property {module:model/Slots}
-     */
-    Slots,
 
     /**
     * The ConfigApi service constructor.

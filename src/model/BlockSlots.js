@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import Block from './Block';
 
 /**
- * The Slots model module.
- * @module model/Slots
+ * The BlockSlots model module.
+ * @module model/BlockSlots
  * @version 1.0.0-beta.128
  */
-class Slots {
+class BlockSlots {
     /**
-     * Constructs a new <code>Slots</code>.
-     * @alias module:model/Slots
+     * Constructs a new <code>BlockSlots</code>.
+     * @alias module:model/BlockSlots
      */
     constructor() { 
         
-        Slots.initialize(this);
+        BlockSlots.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class Slots {
     }
 
     /**
-     * Constructs a <code>Slots</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BlockSlots</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Slots} obj Optional instance to populate.
-     * @return {module:model/Slots} The populated <code>Slots</code> instance.
+     * @param {module:model/BlockSlots} obj Optional instance to populate.
+     * @return {module:model/BlockSlots} The populated <code>BlockSlots</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Slots();
+            obj = obj || new BlockSlots();
 
             if (data.hasOwnProperty('identifier')) {
                 obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
@@ -59,9 +59,9 @@ class Slots {
     }
 
     /**
-     * Validates the JSON data with respect to <code>Slots</code>.
+     * Validates the JSON data with respect to <code>BlockSlots</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Slots</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>BlockSlots</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -91,17 +91,17 @@ class Slots {
  * The unique identifier of the slot
  * @member {String} identifier
  */
-Slots.prototype['identifier'] = undefined;
+BlockSlots.prototype['identifier'] = undefined;
 
 /**
  * @member {Array.<module:model/Block>} content
  */
-Slots.prototype['content'] = undefined;
+BlockSlots.prototype['content'] = undefined;
 
 
 
 
 
 
-export default Slots;
+export default BlockSlots;
 
