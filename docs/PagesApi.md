@@ -1,6 +1,6 @@
 # Nitrocms.PagesApi
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
+All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

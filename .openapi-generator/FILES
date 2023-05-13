@@ -7,8 +7,6 @@ docs/ConfigResponse.md
 docs/ConfigResponseNav.md
 docs/ConfigResponseNitro.md
 docs/ContainerPageProperty.md
-docs/Content.md
-docs/ContentApi.md
 docs/EntitiesApi.md
 docs/EntityResponse.md
 docs/EntityResponseEntity.md
@@ -24,7 +22,6 @@ docs/SitemapApi.md
 docs/SitemapResponseInner.md
 src/ApiClient.js
 src/api/ConfigApi.js
-src/api/ContentApi.js
 src/api/EntitiesApi.js
 src/api/PagesApi.js
 src/api/SearchApi.js
@@ -36,7 +33,6 @@ src/model/ConfigResponse.js
 src/model/ConfigResponseNav.js
 src/model/ConfigResponseNitro.js
 src/model/ContainerPageProperty.js
-src/model/Content.js
 src/model/EntityResponse.js
 src/model/EntityResponseEntity.js
 src/model/EntityResponseEntityEntityMetric.js
