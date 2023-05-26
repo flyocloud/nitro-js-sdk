@@ -1,4 +1,4 @@
-# Nitrocms.EntitiesApi
+# Nitro.EntitiesApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -17,15 +17,15 @@ Get entity by uniqueid
 ### Example
 
 ```javascript
-import Nitrocms from 'nitrocms';
-let defaultClient = Nitrocms.ApiClient.instance;
+import Nitro from 'nitro';
+let defaultClient = Nitro.ApiClient.instance;
 // Configure API key authorization: ApiKeyAuth
 let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitrocms.EntitiesApi();
+let apiInstance = new Nitro.EntitiesApi();
 let uniqueid = 2348uc; // String | The unique id of the given entity
 apiInstance.entity(uniqueid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

@@ -1,4 +1,4 @@
-# Nitrocms.Meta
+# Nitro.Meta
 
 ## Properties
 

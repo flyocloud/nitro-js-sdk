@@ -1,4 +1,4 @@
-# Nitrocms.SitemapApi
+# Nitro.SitemapApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -19,15 +19,15 @@ Get all entities to build a sitemap. Pages are not included.
 ### Example
 
 ```javascript
-import Nitrocms from 'nitrocms';
-let defaultClient = Nitrocms.ApiClient.instance;
+import Nitro from 'nitro';
+let defaultClient = Nitro.ApiClient.instance;
 // Configure API key authorization: ApiKeyAuth
 let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitrocms.SitemapApi();
+let apiInstance = new Nitro.SitemapApi();
 apiInstance.sitemap().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

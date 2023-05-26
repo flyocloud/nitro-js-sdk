@@ -1,4 +1,4 @@
-# Nitrocms.PagesInner
+# Nitro.PagesInner
 
 ## Properties
 

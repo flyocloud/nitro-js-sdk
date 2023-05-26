@@ -1,4 +1,4 @@
-# Nitrocms.PagesApi
+# Nitro.PagesApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -20,15 +20,15 @@ Returns the homepage from the site.
 ### Example
 
 ```javascript
-import Nitrocms from 'nitrocms';
-let defaultClient = Nitrocms.ApiClient.instance;
+import Nitro from 'nitro';
+let defaultClient = Nitro.ApiClient.instance;
 // Configure API key authorization: ApiKeyAuth
 let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitrocms.PagesApi();
+let apiInstance = new Nitro.PagesApi();
 apiInstance.home().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -66,15 +66,15 @@ Returns all informations from a given page by either a slug or a path which is t
 ### Example
 
 ```javascript
-import Nitrocms from 'nitrocms';
-let defaultClient = Nitrocms.ApiClient.instance;
+import Nitro from 'nitro';
+let defaultClient = Nitro.ApiClient.instance;
 // Configure API key authorization: ApiKeyAuth
 let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitrocms.PagesApi();
+let apiInstance = new Nitro.PagesApi();
 let opts = {
   'slug': foo/bar // String | The pages slug, if none give the homepage is returned. Also paths with subpages are allowed
 };

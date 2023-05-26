@@ -9,7 +9,7 @@ yarn add @flyo/nitro-js
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-import { ApiClient, ConfigApi, PagesApi } from '@flyodev/nitrocms-js'
+import { ApiClient, ConfigApi, PagesApi } from '@flyo/nitro-js'
 
 var defaultClient = ApiClient.instance;
 defaultClient.defaultHeaders = {}

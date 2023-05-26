@@ -1,4 +1,4 @@
-# Nitrocms.EntityResponseEntity
+# Nitro.EntityResponseEntity
 
 ## Properties
 

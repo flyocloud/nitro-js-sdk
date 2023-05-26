@@ -1,4 +1,4 @@
-# Nitrocms.SitemapResponseInner
+# Nitro.SitemapResponseInner
 
 ## Properties
 

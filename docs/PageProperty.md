@@ -1,4 +1,4 @@
-# Nitrocms.PageProperty
+# Nitro.PageProperty
 
 ## Properties
 

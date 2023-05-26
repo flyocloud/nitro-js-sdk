@@ -1,4 +1,4 @@
-# Nitrocms.SearchApi
+# Nitro.SearchApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -19,15 +19,15 @@ Search inside pages and entities.
 ### Example
 
 ```javascript
-import Nitrocms from 'nitrocms';
-let defaultClient = Nitrocms.ApiClient.instance;
+import Nitro from 'nitro';
+let defaultClient = Nitro.ApiClient.instance;
 // Configure API key authorization: ApiKeyAuth
 let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
 ApiKeyAuth.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiKeyAuth.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitrocms.SearchApi();
+let apiInstance = new Nitro.SearchApi();
 let query = foobar; // String | The query which should be looked up in the site index.
 apiInstance.search(query).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

@@ -1,4 +1,4 @@
-# Nitrocms.ConfigResponseNav
+# Nitro.ConfigResponseNav
 
 ## Properties
 

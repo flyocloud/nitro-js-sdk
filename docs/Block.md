@@ -1,4 +1,4 @@
-# Nitrocms.Block
+# Nitro.Block
 
 ## Properties
 
