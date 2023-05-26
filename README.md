@@ -1,7 +1,7 @@
-# nitrocms
+# Flyo Nitro JavaScript SDK
 
 ```
-yarn add @flyodev/nitrocms-js
+yarn add @flyo/nitro-js
 ```
 
 ## Getting Started
