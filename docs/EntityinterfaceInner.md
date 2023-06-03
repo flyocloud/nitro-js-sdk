@@ -1,4 +1,4 @@
-# Nitro.SitemapResponseInner
+# Nitro.EntityinterfaceInner
 
 ## Properties
 

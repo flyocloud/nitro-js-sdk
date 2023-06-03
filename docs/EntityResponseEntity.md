@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | An identifier from the database index | [optional] 
-**version** | **Number** | A sequential index as version of the item | [optional] 
+**version** | **Number** | A sequential index serves as a version identifier for an item, allowing for improved organization and extended functionality. By assigning a unique numerical value to each version, it becomes easier to track and manage different iterations of an item over time. | [optional] 
 **entityMetric** | [**EntityResponseEntityEntityMetric**](EntityResponseEntityEntityMetric.md) |  | [optional] 
 **entityUniqueId** | **String** |  | [optional] 
 **entityId** | **String** |  | [optional] 

@@ -10,22 +10,22 @@ Method | HTTP request | Description
 
 ## sitemap
 
-> [SitemapResponseInner] sitemap()
+> [EntityinterfaceInner] sitemap()
 
 Get Sitemap
 
-Get all entities to build a sitemap. Pages are not included.
+This endpoint provides comprehensive data for generating the sitemap. It encompasses all the necessary information, including pages from containers, as well as all entities that have been mapped.
 
 ### Example
 
 ```javascript
 import Nitro from 'nitro';
 let defaultClient = Nitro.ApiClient.instance;
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Configure API key authorization: ApiToken
+let ApiToken = defaultClient.authentications['ApiToken'];
+ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
+//ApiToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Nitro.SitemapApi();
 apiInstance.sitemap().then((data) => {
@@ -42,11 +42,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[SitemapResponseInner]**](SitemapResponseInner.md)
+[**[EntityinterfaceInner]**](EntityinterfaceInner.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiToken](../README.md#ApiToken)
 
 ### HTTP request headers
 

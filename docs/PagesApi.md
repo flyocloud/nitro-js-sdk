@@ -5,7 +5,7 @@ All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**home**](PagesApi.md#home) | **GET** /pages/home | Get Home
-[**page**](PagesApi.md#page) | **GET** /pages | Get page by slug
+[**page**](PagesApi.md#page) | **GET** /pages | Get Page by slug
 
 
 
@@ -15,18 +15,18 @@ Method | HTTP request | Description
 
 Get Home
 
-Returns the homepage from the site.
+This endpoint allows you to retrieve the designated homepage of a website. Alternatively, you can utilize the pages endpoint by specifying an empty slug parameter to achieve the same result. By using either of these methods, you can effectively access the desired homepage of the website.
 
 ### Example
 
 ```javascript
 import Nitro from 'nitro';
 let defaultClient = Nitro.ApiClient.instance;
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Configure API key authorization: ApiToken
+let ApiToken = defaultClient.authentications['ApiToken'];
+ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
+//ApiToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Nitro.PagesApi();
 apiInstance.home().then((data) => {
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiToken](../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -59,24 +59,24 @@ This endpoint does not need any parameter.
 
 > Page page(opts)
 
-Get page by slug
+Get Page by slug
 
-Returns all informations from a given page by either a slug or a path which is the same as the slug with a leading slash.
+This endpoint retrieves comprehensive information from a specified page using either a slug or a path. The slug refers to a unique identifier for the page, while the path is the slug with a leading slash. By providing either the slug or the path as input, the function will gather all the relevant details associated with the page.
 
 ### Example
 
 ```javascript
 import Nitro from 'nitro';
 let defaultClient = Nitro.ApiClient.instance;
-// Configure API key authorization: ApiKeyAuth
-let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Configure API key authorization: ApiToken
+let ApiToken = defaultClient.authentications['ApiToken'];
+ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ApiKeyAuth.apiKeyPrefix = 'Token';
+//ApiToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Nitro.PagesApi();
 let opts = {
-  'slug': foo/bar // String | The pages slug, if none give the homepage is returned. Also paths with subpages are allowed
+  'slug': foo/bar // String | The function retrieves a specific page by its slug. If no slug is provided, it automatically returns the homepage. Moreover, it seamlessly handles paths with subpages, allowing for nested URLs like \"testpage/subpage\". In this way, a forward slash (\"/\") within the path is recognized as a valid character and processed accordingly.
 };
 apiInstance.page(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -91,7 +91,7 @@ apiInstance.page(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **slug** | **String**| The pages slug, if none give the homepage is returned. Also paths with subpages are allowed | [optional] 
+ **slug** | **String**| The function retrieves a specific page by its slug. If no slug is provided, it automatically returns the homepage. Moreover, it seamlessly handles paths with subpages, allowing for nested URLs like \&quot;testpage/subpage\&quot;. In this way, a forward slash (\&quot;/\&quot;) within the path is recognized as a valid character and processed accordingly. | [optional] 
 
 ### Return type
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiToken](../README.md#ApiToken)
 
 ### HTTP request headers
 

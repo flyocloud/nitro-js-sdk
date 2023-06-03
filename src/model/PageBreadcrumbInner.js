@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import Block from './Block';
 
 /**
- * The BlockSlots model module.
- * @module model/BlockSlots
+ * The PageBreadcrumbInner model module.
+ * @module model/PageBreadcrumbInner
  * @version 1.0.0-beta.142
  */
-class BlockSlots {
+class PageBreadcrumbInner {
     /**
-     * Constructs a new <code>BlockSlots</code>.
-     * @alias module:model/BlockSlots
+     * Constructs a new <code>PageBreadcrumbInner</code>.
+     * @alias module:model/PageBreadcrumbInner
      */
     constructor() { 
         
-        BlockSlots.initialize(this);
+        PageBreadcrumbInner.initialize(this);
     }
 
     /**
@@ -38,45 +37,39 @@ class BlockSlots {
     }
 
     /**
-     * Constructs a <code>BlockSlots</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PageBreadcrumbInner</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BlockSlots} obj Optional instance to populate.
-     * @return {module:model/BlockSlots} The populated <code>BlockSlots</code> instance.
+     * @param {module:model/PageBreadcrumbInner} obj Optional instance to populate.
+     * @return {module:model/PageBreadcrumbInner} The populated <code>PageBreadcrumbInner</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BlockSlots();
+            obj = obj || new PageBreadcrumbInner();
 
-            if (data.hasOwnProperty('identifier')) {
-                obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
+            if (data.hasOwnProperty('slug')) {
+                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
             }
-            if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], [Block]);
+            if (data.hasOwnProperty('title')) {
+                obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>BlockSlots</code>.
+     * Validates the JSON data with respect to <code>PageBreadcrumbInner</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>BlockSlots</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PageBreadcrumbInner</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['identifier'] && !(typeof data['identifier'] === 'string' || data['identifier'] instanceof String)) {
-            throw new Error("Expected the field `identifier` to be a primitive type in the JSON string but got " + data['identifier']);
+        if (data['slug'] && !(typeof data['slug'] === 'string' || data['slug'] instanceof String)) {
+            throw new Error("Expected the field `slug` to be a primitive type in the JSON string but got " + data['slug']);
         }
-        if (data['content']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['content'])) {
-                throw new Error("Expected the field `content` to be an array in the JSON data but got " + data['content']);
-            }
-            // validate the optional field `content` (array)
-            for (const item of data['content']) {
-                Block.validateJsonObject(item);
-            };
+        // ensure the json data is a string
+        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
+            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
         }
 
         return true;
@@ -88,20 +81,21 @@ class BlockSlots {
 
 
 /**
- * The unique identifier of the slot
- * @member {String} identifier
+ * Meta page title
+ * @member {String} slug
  */
-BlockSlots.prototype['identifier'] = undefined;
+PageBreadcrumbInner.prototype['slug'] = undefined;
 
 /**
- * @member {Array.<module:model/Block>} content
+ * Meta page title
+ * @member {String} title
  */
-BlockSlots.prototype['content'] = undefined;
+PageBreadcrumbInner.prototype['title'] = undefined;
 
 
 
 
 
 
-export default BlockSlots;
+export default PageBreadcrumbInner;
 
