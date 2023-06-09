@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **label** | **String** |  | [optional] 
 **href** | **String** |  | [optional] 
 **path** | **String** | A path always starts with a trailing slash | [optional] 
-**properties** | [**ContainerPageProperty**](ContainerPageProperty.md) |  | [optional] 
+**properties** | **{String: Object}** |  | [optional] 
 **children** | [**[PagesInner]**](PagesInner.md) | Represents a comprehensive collection of pages within the specified container. These pages are organized in a nested tree structure, where each page can have child pages associated with it. These child pages are conveniently stored within the children property of their respective parent page. | [optional] 
 
 
