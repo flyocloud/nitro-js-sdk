@@ -27,14 +27,6 @@ const homeData = await new PagesApi().home()
 const pageData = await new PagesApi().page({slug: 'the/slug/of/the/page'})
 ```
 
-## Documentation for API Endpoints
+## Documentation
 
-All URIs are relative to *https://api.flyo.cloud/nitro*
-
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*ConfigApi* | [**config**](docs/ConfigApi.md#config) | **GET** /config | Get Config
-*PagesApi* | [**home**](docs/PagesApi.md#home) | **GET** /pages/home | Get Home
-*PagesApi* | [**pages**](docs/PagesApi.md#pages) | **GET** /pages | Get Pages
-*SitemapApi* | [**pages**](docs/SitemapApi.md) | **GET** /sitemap | Get Pages
-*ContentApi* | [**pages**](docs/ContentApi.md) | **PUT** /content/{pageId} | Put Content
+[Read More in the Docs](https://dev.flyo.cloud/nitro/javascript)
