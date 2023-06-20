@@ -14,8 +14,8 @@ import { ApiClient, ConfigApi, PagesApi } from '@flyo/nitro-js'
 var defaultClient = ApiClient.instance;
 defaultClient.defaultHeaders = {}
 
-var ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
-ApiKeyAuth.apiKey = "INSERT_YOUR_TOKEN_HERE"
+let ApiToken = defaultClient.authentications['ApiToken'];
+ApiToken.apiKey = 'YOUR API KEY';
 
 // the config data contains all informations, including all pages to retrieve further informations like page content:
 const configData = await new ConfigApi().config()
