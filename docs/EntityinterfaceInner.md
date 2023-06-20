@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **entityTypeId** | **Number** |  | [optional] 
 **entityTimeStart** | **String** |  | [optional] 
 **entityImage** | **String** |  | [optional] 
+**routes** | **{String: String}** |  | [optional] 
 
 

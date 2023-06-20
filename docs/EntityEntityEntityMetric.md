@@ -1,4 +1,4 @@
-# Nitro.EntityResponseEntityEntityMetric
+# Nitro.EntityEntityEntityMetric
 
 ## Properties
 

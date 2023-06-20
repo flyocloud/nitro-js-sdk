@@ -7,9 +7,9 @@ docs/ConfigResponse.md
 docs/ConfigResponseContainersValue.md
 docs/ConfigResponseNitro.md
 docs/EntitiesApi.md
-docs/EntityResponse.md
-docs/EntityResponseEntity.md
-docs/EntityResponseEntityEntityMetric.md
+docs/Entity.md
+docs/EntityEntity.md
+docs/EntityEntityEntityMetric.md
 docs/EntityinterfaceInner.md
 docs/Meta.md
 docs/Page.md
@@ -31,9 +31,9 @@ src/model/BlockSlots.js
 src/model/ConfigResponse.js
 src/model/ConfigResponseContainersValue.js
 src/model/ConfigResponseNitro.js
-src/model/EntityResponse.js
-src/model/EntityResponseEntity.js
-src/model/EntityResponseEntityEntityMetric.js
+src/model/Entity.js
+src/model/EntityEntity.js
+src/model/EntityEntityEntityMetric.js
 src/model/EntityinterfaceInner.js
 src/model/Meta.js
 src/model/Page.js

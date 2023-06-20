@@ -1,11 +1,11 @@
-# Nitro.EntityResponseEntity
+# Nitro.EntityEntity
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **version** | **Number** | A sequential index serves as a version identifier for an item, allowing for improved organization and extended functionality. By assigning a unique numerical value to each version, it becomes easier to track and manage different iterations of an item over time. | [optional] 
-**entityMetric** | [**EntityResponseEntityEntityMetric**](EntityResponseEntityEntityMetric.md) |  | [optional] 
+**entityMetric** | [**EntityEntityEntityMetric**](EntityEntityEntityMetric.md) |  | [optional] 
 **entityUniqueId** | **String** |  | [optional] 
 **entityId** | **String** |  | [optional] 
 **entityImage** | **String** |  | [optional] 
@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **entityType** | **String** |  | [optional] 
 **entityTypeId** | **Number** |  | [optional] 
 **updatedAt** | **String** |  | [optional] 
+**routes** | **{String: String}** |  | [optional] 
 
 
