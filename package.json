@@ -1,6 +1,6 @@
 {
   "name": "@flyo/nitro-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Flyo Nitro JS SDK",
   "license": "MIT",
   "main": "dist/index.js",
