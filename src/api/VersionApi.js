@@ -13,18 +13,18 @@
 
 
 import ApiClient from "../ApiClient";
-import EntityinterfaceInner from '../model/EntityinterfaceInner';
+import VersionResponse from '../model/VersionResponse';
 
 /**
-* Sitemap service.
-* @module api/SitemapApi
+* Version service.
+* @module api/VersionApi
 * @version 1.0.0-beta.150
 */
-export default class SitemapApi {
+export default class VersionApi {
 
     /**
-    * Constructs a new SitemapApi. 
-    * @alias module:api/SitemapApi
+    * Constructs a new VersionApi. 
+    * @alias module:api/VersionApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -36,11 +36,11 @@ export default class SitemapApi {
 
 
     /**
-     * Get Sitemap
-     * This endpoint provides comprehensive data for generating the sitemap. It encompasses all the necessary information, including pages from containers, as well as all entities that have been mapped.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/EntityinterfaceInner>} and HTTP response
+     * Get Version Information
+     * The Version API endpoint offers a highly efficient solution for evaluating the current caching status of your application's caching mechanism. This functionality allows you to cache the entire application configuration and page responses indefinitely. However, utilizing this endpoint enables you to assess the validity of the cache by sending a request to determine its current status. This caching endpoint is specifically designed for optimal performance when compared to the configuration endpoint, which requires more thorough evaluation and encompasses a substantial response body.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
-    sitemapWithHttpInfo() {
+    versionWithHttpInfo() {
       let postBody = null;
 
       let pathParams = {
@@ -55,21 +55,21 @@ export default class SitemapApi {
       let authNames = ['ApiToken'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [EntityinterfaceInner];
+      let returnType = VersionResponse;
       return this.apiClient.callApi(
-        '/sitemap', 'GET',
+        '/version', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Get Sitemap
-     * This endpoint provides comprehensive data for generating the sitemap. It encompasses all the necessary information, including pages from containers, as well as all entities that have been mapped.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/EntityinterfaceInner>}
+     * Get Version Information
+     * The Version API endpoint offers a highly efficient solution for evaluating the current caching status of your application's caching mechanism. This functionality allows you to cache the entire application configuration and page responses indefinitely. However, utilizing this endpoint enables you to assess the validity of the cache by sending a request to determine its current status. This caching endpoint is specifically designed for optimal performance when compared to the configuration endpoint, which requires more thorough evaluation and encompasses a substantial response body.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
-    sitemap() {
-      return this.sitemapWithHttpInfo()
+    version() {
+      return this.versionWithHttpInfo()
         .then(function(response_and_data) {
           return response_and_data.data;
         });

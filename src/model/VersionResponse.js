@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import EntityInterface from './EntityInterface';
 
 /**
- * The Entity model module.
- * @module model/Entity
+ * The VersionResponse model module.
+ * @module model/VersionResponse
  * @version 1.0.0-beta.150
  */
-class Entity {
+class VersionResponse {
     /**
-     * Constructs a new <code>Entity</code>.
-     * @alias module:model/Entity
+     * Constructs a new <code>VersionResponse</code>.
+     * @alias module:model/VersionResponse
      */
     constructor() { 
         
-        Entity.initialize(this);
+        VersionResponse.initialize(this);
     }
 
     /**
@@ -38,43 +37,32 @@ class Entity {
     }
 
     /**
-     * Constructs a <code>Entity</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>VersionResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Entity} obj Optional instance to populate.
-     * @return {module:model/Entity} The populated <code>Entity</code> instance.
+     * @param {module:model/VersionResponse} obj Optional instance to populate.
+     * @return {module:model/VersionResponse} The populated <code>VersionResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Entity();
+            obj = obj || new VersionResponse();
 
-            if (data.hasOwnProperty('entity')) {
-                obj['entity'] = EntityInterface.constructFromObject(data['entity']);
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
-            if (data.hasOwnProperty('model')) {
-                obj['model'] = ApiClient.convertToType(data['model'], Object);
-            }
-            if (data.hasOwnProperty('language')) {
-                obj['language'] = ApiClient.convertToType(data['language'], 'String');
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Number');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>Entity</code>.
+     * Validates the JSON data with respect to <code>VersionResponse</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Entity</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>VersionResponse</code>.
      */
     static validateJSON(data) {
-        // validate the optional field `entity`
-        if (data['entity']) { // data not null
-          EntityInterface.validateJSON(data['entity']);
-        }
-        // ensure the json data is a string
-        if (data['language'] && !(typeof data['language'] === 'string' || data['language'] instanceof String)) {
-            throw new Error("Expected the field `language` to be a primitive type in the JSON string but got " + data['language']);
-        }
 
         return true;
     }
@@ -85,25 +73,21 @@ class Entity {
 
 
 /**
- * @member {module:model/EntityInterface} entity
+ * Whenever Flyo generates new data, the version number will be appropriately incremented. If this value is employed for caching, it will undergo less frequent purging in comparison to the `updated_at` value, thus extending its longevity. (last longer)
+ * @member {Number} version
  */
-Entity.prototype['entity'] = undefined;
+VersionResponse.prototype['version'] = undefined;
 
 /**
- * @member {Object} model
+ * A Unix timestamp indicating when the Nitro was last updated. This timestamp does not correlate with the version number. If this value is utilized for caching purposes, it will experience more frequent purges compared to the version number, leading to shorter caching intervals. (last shorter)
+ * @member {Number} updated_at
  */
-Entity.prototype['model'] = undefined;
-
-/**
- * Current language context for entity model data
- * @member {String} language
- */
-Entity.prototype['language'] = undefined;
+VersionResponse.prototype['updated_at'] = undefined;
 
 
 
 
 
 
-export default Entity;
+export default VersionResponse;
 

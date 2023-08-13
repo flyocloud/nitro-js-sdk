@@ -19,12 +19,15 @@ docs/PagesApi.md
 docs/PagesInner.md
 docs/SearchApi.md
 docs/SitemapApi.md
+docs/VersionApi.md
+docs/VersionResponse.md
 src/ApiClient.js
 src/api/ConfigApi.js
 src/api/EntitiesApi.js
 src/api/PagesApi.js
 src/api/SearchApi.js
 src/api/SitemapApi.js
+src/api/VersionApi.js
 src/index.js
 src/model/Block.js
 src/model/BlockSlots.js
@@ -40,3 +43,4 @@ src/model/Page.js
 src/model/PageBreadcrumbInner.js
 src/model/PageProperty.js
 src/model/PagesInner.js
+src/model/VersionResponse.js
