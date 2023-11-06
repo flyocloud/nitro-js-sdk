@@ -1,4 +1,4 @@
-# Nitro.SearchApi
+# FlyoNitroJs.SearchApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -19,15 +19,15 @@ This endpoint offers a powerful capability to search through the websites sitema
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.SearchApi();
+let apiInstance = new FlyoNitroJs.SearchApi();
 let query = foobar; // String | The query keyword that needs to be looked up. It is important to ensure that the query is properly URL encoded for accurate processing and retrieval.
 apiInstance.search(query).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

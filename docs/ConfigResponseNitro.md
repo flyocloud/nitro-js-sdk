@@ -1,4 +1,4 @@
-# Nitro.ConfigResponseNitro
+# FlyoNitroJs.ConfigResponseNitro
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Nitro.PageProperty
+# FlyoNitroJs.PageProperty
 
 ## Properties
 

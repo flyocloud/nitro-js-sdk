@@ -1,4 +1,4 @@
-# Nitro.VersionResponse
+# FlyoNitroJs.VersionResponse
 
 ## Properties
 

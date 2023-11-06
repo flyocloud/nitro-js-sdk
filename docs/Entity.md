@@ -1,4 +1,4 @@
-# Nitro.Entity
+# FlyoNitroJs.Entity
 
 ## Properties
 

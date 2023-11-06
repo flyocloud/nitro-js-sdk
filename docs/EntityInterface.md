@@ -1,4 +1,4 @@
-# Nitro.EntityInterface
+# FlyoNitroJs.EntityInterface
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Nitro.SitemapApi
+# FlyoNitroJs.SitemapApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -19,15 +19,15 @@ This endpoint provides comprehensive data for generating the sitemap. It encompa
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.SitemapApi();
+let apiInstance = new FlyoNitroJs.SitemapApi();
 apiInstance.sitemap().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

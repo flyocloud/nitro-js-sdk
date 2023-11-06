@@ -1,4 +1,4 @@
-# Nitro.PagesInner
+# FlyoNitroJs.PagesInner
 
 ## Properties
 

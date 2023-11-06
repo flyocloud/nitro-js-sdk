@@ -1,4 +1,4 @@
-# Nitro.EntitiesApi
+# FlyoNitroJs.EntitiesApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -20,15 +20,15 @@ Find entity by slug and optional Type-ID
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.EntitiesApi();
+let apiInstance = new FlyoNitroJs.EntitiesApi();
 let slug = hello-world; // String | When looking up an entity slug, it is advisable to provide the typeId parameter along with it, as slugs are not unique among other entities. Failing to include the typeId parameter may lead to unintended or incorrect results. By specifying the typeId, you can ensure more accurate and targeted retrieval of the desired entity.
 let opts = {
   'typeId': 123 // Number | To ensure accurate lookup, it is considered a best practice to include the Type-ID of the entity associated with the slug. The Type-ID, alternatively referred to as the Entity-Definition-Schema ID, serves as a crucial identifier within the system. It uniquely distinguishes and categorizes the Entity-Definition-Schema.
@@ -74,15 +74,15 @@ The endpoint provides comprehensive information about a specified entity. An ent
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.EntitiesApi();
+let apiInstance = new FlyoNitroJs.EntitiesApi();
 let uniqueid = 2348uc; // String | The unique identifier of the given entity is a string composed solely of lowercase alphabetic characters (a-z) and numbers. This identifier is meticulously generated for each data row, ensuring its uniqueness and facilitating efficient data management and retrieval across content pools.
 apiInstance.entityByUniqueid(uniqueid).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

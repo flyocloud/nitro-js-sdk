@@ -1,4 +1,4 @@
-# Nitro.PagesApi
+# FlyoNitroJs.PagesApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -20,15 +20,15 @@ This endpoint allows you to retrieve the designated homepage of a website. Alter
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.PagesApi();
+let apiInstance = new FlyoNitroJs.PagesApi();
 apiInstance.home().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -66,15 +66,15 @@ This endpoint retrieves comprehensive information from a specified page using ei
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.PagesApi();
+let apiInstance = new FlyoNitroJs.PagesApi();
 let opts = {
   'slug': foo/bar // String | The function retrieves a specific page by its slug. If no slug is provided, it automatically returns the homepage. Moreover, it seamlessly handles paths with subpages, allowing for nested URLs like \"testpage/subpage\". In this way, a forward slash (\"/\") within the path is recognized as a valid character and processed accordingly.
 };

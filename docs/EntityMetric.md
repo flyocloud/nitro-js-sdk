@@ -1,4 +1,4 @@
-# Nitro.EntityMetric
+# FlyoNitroJs.EntityMetric
 
 ## Properties
 

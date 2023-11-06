@@ -1,4 +1,4 @@
-# Nitro.VersionApi
+# FlyoNitroJs.VersionApi
 
 All URIs are relative to *https://api.flyo.cloud/nitro/v1*
 
@@ -19,15 +19,15 @@ The Version API endpoint offers a highly efficient solution for evaluating the c
 ### Example
 
 ```javascript
-import Nitro from 'nitro';
-let defaultClient = Nitro.ApiClient.instance;
+import FlyoNitroJs from '@flyo/nitro-js';
+let defaultClient = FlyoNitroJs.ApiClient.instance;
 // Configure API key authorization: ApiToken
 let ApiToken = defaultClient.authentications['ApiToken'];
 ApiToken.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ApiToken.apiKeyPrefix = 'Token';
 
-let apiInstance = new Nitro.VersionApi();
+let apiInstance = new FlyoNitroJs.VersionApi();
 apiInstance.version().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
