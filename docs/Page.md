@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
+**id** | **Number** | The ID for the page | [optional] 
 **title** | **String** |  | [optional] 
 **href** | **String** | Returns the completed href tag. Internal links are appended with trailing slashes, such as &#x60;/about-me&#x60;, while email links are formatted with &#x60;mailto:hello@flyo.ch&#x60;. | [optional] 
 **slug** | **String** | The slug, in its current form, contains the full path of nested slugs and serves as the identifier for querying the respective page. | [optional] 
 **json** | [**[Block]**](Block.md) |  | [optional] 
-**depth** | **Number** |  | [optional] 
-**isHome** | **Number** |  | [optional] 
-**createdAt** | **Number** |  | [optional] 
-**updatedAt** | **Number** |  | [optional] 
-**isVisible** | **Number** |  | [optional] 
+**depth** | **Number** | The depth of the page in the tree structure | [optional] 
+**isHome** | **Number** | Determining whether the page is the homepage or not. | [optional] 
+**createdAt** | **Number** | A Unix timestamp indicating when the page was created. | [optional] 
+**updatedAt** | **Number** | A Unix timestamp indicating when the page was last updated. | [optional] 
+**isVisible** | **Number** | Determining whether the page is visible or not. | [optional] 
 **metaJson** | [**Meta**](Meta.md) |  | [optional] 
 **properties** | [**{String: PageProperty}**](PageProperty.md) |  | [optional] 
 **uid** | **String** | A unique identifier for the page | [optional] 
