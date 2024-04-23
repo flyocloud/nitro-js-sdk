@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## search
 
-> [EntityinterfaceInner] search(query)
+> [EntityinterfaceInner] search(query, opts)
 
 Get Search by query
 
@@ -28,8 +28,11 @@ ApiToken.apiKey = 'YOUR API KEY';
 //ApiToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new FlyoNitroJs.SearchApi();
-let query = foobar; // String | The query keyword that needs to be looked up. It is important to ensure that the query is properly URL encoded for accurate processing and retrieval.
-apiInstance.search(query).then((data) => {
+let query = "foobar"; // String | The query keyword that needs to be looked up. It is important to ensure that the query is properly URL encoded for accurate processing and retrieval.
+let opts = {
+  'lang': "de" // String | The language context for the current request. If not defined, the defed primary language will be used. If the nitro setup is not configured as multi lingual, the language parameter won't have any effect
+};
+apiInstance.search(query, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -43,6 +46,7 @@ apiInstance.search(query).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**| The query keyword that needs to be looked up. It is important to ensure that the query is properly URL encoded for accurate processing and retrieval. | 
+ **lang** | **String**| The language context for the current request. If not defined, the defed primary language will be used. If the nitro setup is not configured as multi lingual, the language parameter won&#39;t have any effect | [optional] 
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## version
 
-> VersionResponse version()
+> VersionResponse version(opts)
 
 Get Version Information
 
@@ -28,7 +28,10 @@ ApiToken.apiKey = 'YOUR API KEY';
 //ApiToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new FlyoNitroJs.VersionApi();
-apiInstance.version().then((data) => {
+let opts = {
+  'lang': "de" // String | The language context for the current request. If not defined, the defed primary language will be used. If the nitro setup is not configured as multi lingual, the language parameter won't have any effect
+};
+apiInstance.version(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -38,7 +41,10 @@ apiInstance.version().then((data) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lang** | **String**| The language context for the current request. If not defined, the defed primary language will be used. If the nitro setup is not configured as multi lingual, the language parameter won&#39;t have any effect | [optional] 
 
 ### Return type
 
