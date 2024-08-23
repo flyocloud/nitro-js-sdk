@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The PageBreadcrumbInner model module.
- * @module model/PageBreadcrumbInner
+ * The FieldDropdown model module.
+ * @module model/FieldDropdown
  * @version 1.0.0-beta.197
  */
-class PageBreadcrumbInner {
+class FieldDropdown {
     /**
-     * Constructs a new <code>PageBreadcrumbInner</code>.
-     * @alias module:model/PageBreadcrumbInner
+     * Constructs a new <code>FieldDropdown</code>.
+     * @alias module:model/FieldDropdown
      */
     constructor() { 
         
-        PageBreadcrumbInner.initialize(this);
+        FieldDropdown.initialize(this);
     }
 
     /**
@@ -37,39 +37,42 @@ class PageBreadcrumbInner {
     }
 
     /**
-     * Constructs a <code>PageBreadcrumbInner</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>FieldDropdown</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PageBreadcrumbInner} obj Optional instance to populate.
-     * @return {module:model/PageBreadcrumbInner} The populated <code>PageBreadcrumbInner</code> instance.
+     * @param {module:model/FieldDropdown} obj Optional instance to populate.
+     * @return {module:model/FieldDropdown} The populated <code>FieldDropdown</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new PageBreadcrumbInner();
+            obj = obj || new FieldDropdown();
 
-            if (data.hasOwnProperty('slug')) {
-                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
+            if (data.hasOwnProperty('value')) {
+                obj['value'] = ApiClient.convertToType(data['value'], 'String');
             }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            if (data.hasOwnProperty('options')) {
+                obj['options'] = ApiClient.convertToType(data['options'], Object);
+            }
+            if (data.hasOwnProperty('label')) {
+                obj['label'] = ApiClient.convertToType(data['label'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>PageBreadcrumbInner</code>.
+     * Validates the JSON data with respect to <code>FieldDropdown</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PageBreadcrumbInner</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FieldDropdown</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['slug'] && !(typeof data['slug'] === 'string' || data['slug'] instanceof String)) {
-            throw new Error("Expected the field `slug` to be a primitive type in the JSON string but got " + data['slug']);
+        if (data['value'] && !(typeof data['value'] === 'string' || data['value'] instanceof String)) {
+            throw new Error("Expected the field `value` to be a primitive type in the JSON string but got " + data['value']);
         }
         // ensure the json data is a string
-        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
-            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        if (data['label'] && !(typeof data['label'] === 'string' || data['label'] instanceof String)) {
+            throw new Error("Expected the field `label` to be a primitive type in the JSON string but got " + data['label']);
         }
 
         return true;
@@ -81,21 +84,27 @@ class PageBreadcrumbInner {
 
 
 /**
- * Meta page title
- * @member {String} slug
+ * The option value which has been selected in flyo.
+ * @member {String} value
  */
-PageBreadcrumbInner.prototype['slug'] = undefined;
+FieldDropdown.prototype['value'] = undefined;
 
 /**
- * Meta page title
- * @member {String} title
+ * All Options which are available in the dropdown and the user can select from
+ * @member {Object} options
  */
-PageBreadcrumbInner.prototype['title'] = undefined;
+FieldDropdown.prototype['options'] = undefined;
+
+/**
+ * The option label which has been selected in flyo.
+ * @member {String} label
+ */
+FieldDropdown.prototype['label'] = undefined;
 
 
 
 
 
 
-export default PageBreadcrumbInner;
+export default FieldDropdown;
 

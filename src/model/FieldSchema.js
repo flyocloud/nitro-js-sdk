@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The PageBreadcrumbInner model module.
- * @module model/PageBreadcrumbInner
+ * The FieldSchema model module.
+ * @module model/FieldSchema
  * @version 1.0.0-beta.197
  */
-class PageBreadcrumbInner {
+class FieldSchema {
     /**
-     * Constructs a new <code>PageBreadcrumbInner</code>.
-     * @alias module:model/PageBreadcrumbInner
+     * Constructs a new <code>FieldSchema</code>.
+     * @alias module:model/FieldSchema
      */
     constructor() { 
         
-        PageBreadcrumbInner.initialize(this);
+        FieldSchema.initialize(this);
     }
 
     /**
@@ -37,39 +37,35 @@ class PageBreadcrumbInner {
     }
 
     /**
-     * Constructs a <code>PageBreadcrumbInner</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>FieldSchema</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PageBreadcrumbInner} obj Optional instance to populate.
-     * @return {module:model/PageBreadcrumbInner} The populated <code>PageBreadcrumbInner</code> instance.
+     * @param {module:model/FieldSchema} obj Optional instance to populate.
+     * @return {module:model/FieldSchema} The populated <code>FieldSchema</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new PageBreadcrumbInner();
+            obj = obj || new FieldSchema();
 
-            if (data.hasOwnProperty('slug')) {
-                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            if (data.hasOwnProperty('unique_id')) {
+                obj['unique_id'] = ApiClient.convertToType(data['unique_id'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>PageBreadcrumbInner</code>.
+     * Validates the JSON data with respect to <code>FieldSchema</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PageBreadcrumbInner</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FieldSchema</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['slug'] && !(typeof data['slug'] === 'string' || data['slug'] instanceof String)) {
-            throw new Error("Expected the field `slug` to be a primitive type in the JSON string but got " + data['slug']);
-        }
-        // ensure the json data is a string
-        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
-            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        if (data['unique_id'] && !(typeof data['unique_id'] === 'string' || data['unique_id'] instanceof String)) {
+            throw new Error("Expected the field `unique_id` to be a primitive type in the JSON string but got " + data['unique_id']);
         }
 
         return true;
@@ -81,21 +77,19 @@ class PageBreadcrumbInner {
 
 
 /**
- * Meta page title
- * @member {String} slug
+ * @member {Number} id
  */
-PageBreadcrumbInner.prototype['slug'] = undefined;
+FieldSchema.prototype['id'] = undefined;
 
 /**
- * Meta page title
- * @member {String} title
+ * @member {String} unique_id
  */
-PageBreadcrumbInner.prototype['title'] = undefined;
+FieldSchema.prototype['unique_id'] = undefined;
 
 
 
 
 
 
-export default PageBreadcrumbInner;
+export default FieldSchema;
 

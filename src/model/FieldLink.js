@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The PagesInner model module.
- * @module model/PagesInner
+ * The FieldLink model module.
+ * @module model/FieldLink
  * @version 1.0.0-beta.197
  */
-class PagesInner {
+class FieldLink {
     /**
-     * Constructs a new <code>PagesInner</code>.
-     * @alias module:model/PagesInner
+     * Constructs a new <code>FieldLink</code>.
+     * @alias module:model/FieldLink
      */
     constructor() { 
         
-        PagesInner.initialize(this);
+        FieldLink.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class PagesInner {
     }
 
     /**
-     * Constructs a <code>PagesInner</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>FieldLink</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PagesInner} obj Optional instance to populate.
-     * @return {module:model/PagesInner} The populated <code>PagesInner</code> instance.
+     * @param {module:model/FieldLink} obj Optional instance to populate.
+     * @return {module:model/FieldLink} The populated <code>FieldLink</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new PagesInner();
+            obj = obj || new FieldLink();
 
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -53,29 +53,23 @@ class PagesInner {
             if (data.hasOwnProperty('target')) {
                 obj['target'] = ApiClient.convertToType(data['target'], 'String');
             }
-            if (data.hasOwnProperty('label')) {
-                obj['label'] = ApiClient.convertToType(data['label'], 'String');
+            if (data.hasOwnProperty('raw')) {
+                obj['raw'] = ApiClient.convertToType(data['raw'], 'String');
             }
             if (data.hasOwnProperty('href')) {
                 obj['href'] = ApiClient.convertToType(data['href'], 'String');
             }
-            if (data.hasOwnProperty('slug')) {
-                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
-            }
-            if (data.hasOwnProperty('properties')) {
-                obj['properties'] = ApiClient.convertToType(data['properties'], {'String': Object});
-            }
-            if (data.hasOwnProperty('children')) {
-                obj['children'] = ApiClient.convertToType(data['children'], [PagesInner]);
+            if (data.hasOwnProperty('extras')) {
+                obj['extras'] = ApiClient.convertToType(data['extras'], Object);
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>PagesInner</code>.
+     * Validates the JSON data with respect to <code>FieldLink</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PagesInner</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FieldLink</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
@@ -87,26 +81,12 @@ class PagesInner {
             throw new Error("Expected the field `target` to be a primitive type in the JSON string but got " + data['target']);
         }
         // ensure the json data is a string
-        if (data['label'] && !(typeof data['label'] === 'string' || data['label'] instanceof String)) {
-            throw new Error("Expected the field `label` to be a primitive type in the JSON string but got " + data['label']);
+        if (data['raw'] && !(typeof data['raw'] === 'string' || data['raw'] instanceof String)) {
+            throw new Error("Expected the field `raw` to be a primitive type in the JSON string but got " + data['raw']);
         }
         // ensure the json data is a string
         if (data['href'] && !(typeof data['href'] === 'string' || data['href'] instanceof String)) {
             throw new Error("Expected the field `href` to be a primitive type in the JSON string but got " + data['href']);
-        }
-        // ensure the json data is a string
-        if (data['slug'] && !(typeof data['slug'] === 'string' || data['slug'] instanceof String)) {
-            throw new Error("Expected the field `slug` to be a primitive type in the JSON string but got " + data['slug']);
-        }
-        if (data['children']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['children'])) {
-                throw new Error("Expected the field `children` to be an array in the JSON data but got " + data['children']);
-            }
-            // validate the optional field `children` (array)
-            for (const item of data['children']) {
-                PagesInner.validateJSON(item);
-            };
         }
 
         return true;
@@ -118,49 +98,39 @@ class PagesInner {
 
 
 /**
- * The `page` type is the default behavior for a webpage, but it can also be assigned different types to suit specific purposes. In addition to the default content type, there are several other types available, including `email`, `file`, `url` and `tel`. By specifying these types, you can customize the behavior and functionality of your page to better align with your requirements.
+ * The type of the link. Possible values are: nitropagelink, url, email, tel, file
  * @member {String} type
  */
-PagesInner.prototype['type'] = undefined;
+FieldLink.prototype['type'] = undefined;
 
 /**
- * can be either _self (which is default) or _blank
+ * The target attribute of the link. Possible values are: _blank, _self
  * @member {String} target
  */
-PagesInner.prototype['target'] = undefined;
+FieldLink.prototype['target'] = undefined;
 
 /**
- * @member {String} label
+ * The not modified raw input value of flyo.
+ * @member {String} raw
  */
-PagesInner.prototype['label'] = undefined;
+FieldLink.prototype['raw'] = undefined;
 
 /**
- * Returns the completed href tag. Internal links are appended with trailing slashes, such as `/about-me`, while email links are formatted with `mailto:hello@flyo.ch`.
+ * The link in a href format. Which means links have a trailing slash. E-Mail links start with mailto: and phone links start with tel:
  * @member {String} href
  */
-PagesInner.prototype['href'] = undefined;
+FieldLink.prototype['href'] = undefined;
 
 /**
- * The slug, in its current form, contains the full path of nested slugs and serves as the identifier for querying the respective page.
- * @member {String} slug
+ * Additional information about the link. This information can vary depending on the type of link.
+ * @member {Object} extras
  */
-PagesInner.prototype['slug'] = undefined;
-
-/**
- * @member {Object.<String, Object>} properties
- */
-PagesInner.prototype['properties'] = undefined;
-
-/**
- * Represents a comprehensive collection of pages within the specified container. These pages are organized in a nested tree structure, where each page can have child pages associated with it. These child pages are conveniently stored within the children property of their respective parent page.
- * @member {Array.<module:model/PagesInner>} children
- */
-PagesInner.prototype['children'] = undefined;
+FieldLink.prototype['extras'] = undefined;
 
 
 
 
 
 
-export default PagesInner;
+export default FieldLink;
 

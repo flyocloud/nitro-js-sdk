@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Meta model module.
- * @module model/Meta
+ * The FieldFile model module.
+ * @module model/FieldFile
  * @version 1.0.0-beta.197
  */
-class Meta {
+class FieldFile {
     /**
-     * Constructs a new <code>Meta</code>.
-     * @alias module:model/Meta
+     * Constructs a new <code>FieldFile</code>.
+     * @alias module:model/FieldFile
      */
     constructor() { 
         
-        Meta.initialize(this);
+        FieldFile.initialize(this);
     }
 
     /**
@@ -37,46 +37,56 @@ class Meta {
     }
 
     /**
-     * Constructs a <code>Meta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>FieldFile</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Meta} obj Optional instance to populate.
-     * @return {module:model/Meta} The populated <code>Meta</code> instance.
+     * @param {module:model/FieldFile} obj Optional instance to populate.
+     * @return {module:model/FieldFile} The populated <code>FieldFile</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Meta();
+            obj = obj || new FieldFile();
 
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            if (data.hasOwnProperty('source')) {
+                obj['source'] = ApiClient.convertToType(data['source'], 'String');
             }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = ApiClient.convertToType(data['image'], 'String');
+            if (data.hasOwnProperty('caption')) {
+                obj['caption'] = ApiClient.convertToType(data['caption'], 'String');
             }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            if (data.hasOwnProperty('copyright')) {
+                obj['copyright'] = ApiClient.convertToType(data['copyright'], 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>Meta</code>.
+     * Validates the JSON data with respect to <code>FieldFile</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Meta</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FieldFile</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
-            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        if (data['source'] && !(typeof data['source'] === 'string' || data['source'] instanceof String)) {
+            throw new Error("Expected the field `source` to be a primitive type in the JSON string but got " + data['source']);
         }
         // ensure the json data is a string
-        if (data['image'] && !(typeof data['image'] === 'string' || data['image'] instanceof String)) {
-            throw new Error("Expected the field `image` to be a primitive type in the JSON string but got " + data['image']);
+        if (data['caption'] && !(typeof data['caption'] === 'string' || data['caption'] instanceof String)) {
+            throw new Error("Expected the field `caption` to be a primitive type in the JSON string but got " + data['caption']);
         }
         // ensure the json data is a string
-        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
-            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        if (data['copyright'] && !(typeof data['copyright'] === 'string' || data['copyright'] instanceof String)) {
+            throw new Error("Expected the field `copyright` to be a primitive type in the JSON string but got " + data['copyright']);
+        }
+        // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
 
         return true;
@@ -88,27 +98,37 @@ class Meta {
 
 
 /**
- * Meta Description
- * @member {String} description
+ * Manipulatable image path, see https://dev.flyo.cloud/infos/images.html.
+ * @member {String} source
  */
-Meta.prototype['description'] = undefined;
+FieldFile.prototype['source'] = undefined;
 
 /**
- * Path to meta image
- * @member {String} image
+ * Describes the file or image
+ * @member {String} caption
  */
-Meta.prototype['image'] = undefined;
+FieldFile.prototype['caption'] = undefined;
 
 /**
- * Meta page title
- * @member {String} title
+ * @member {String} copyright
  */
-Meta.prototype['title'] = undefined;
+FieldFile.prototype['copyright'] = undefined;
+
+/**
+ * @member {String} name
+ */
+FieldFile.prototype['name'] = undefined;
+
+/**
+ * The unique identifier of the file or image as incremental number.
+ * @member {Number} id
+ */
+FieldFile.prototype['id'] = undefined;
 
 
 
 
 
 
-export default Meta;
+export default FieldFile;
 
