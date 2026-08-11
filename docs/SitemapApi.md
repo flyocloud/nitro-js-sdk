@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get Sitemap
 
-This endpoint provides comprehensive data for generating the sitemap. It encompasses all the necessary information, including pages from containers, as well as all entities that have been mapped.
+This endpoint provides comprehensive data for generating the sitemap. It encompasses all the necessary information, including pages from containers, as well as all entities that have been mapped. Each item includes an &#x60;href&#x60; attribute containing the resolved URL path for the entity and an &#x60;updated_at&#x60; Unix timestamp which should be used as the &#x60;lastmod&#x60; value of the sitemap entry. In multi-lingual setups, the sitemap returns all language variants of every entity and page, regardless of the &#x60;lang&#x60; parameter. This ensures complete SEO coverage across all configured languages.
 
 ### Example
 
@@ -29,7 +29,7 @@ ApiToken.apiKey = 'YOUR API KEY';
 
 let apiInstance = new FlyoNitroJs.SitemapApi();
 let opts = {
-  'lang': "de" // String | The language context for the current request. If not defined, the defed primary language will be used. If the nitro setup is not configured as multi lingual, the language parameter won't have any effect
+  'lang': "de" // String | Specifies the language context for the current request. If not provided, the default primary language will be used. This parameter has no effect if the Nitro setup is not configured for multiple languages.
 };
 apiInstance.sitemap(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -44,7 +44,7 @@ apiInstance.sitemap(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **String**| The language context for the current request. If not defined, the defed primary language will be used. If the nitro setup is not configured as multi lingual, the language parameter won&#39;t have any effect | [optional] 
+ **lang** | **String**| Specifies the language context for the current request. If not provided, the default primary language will be used. This parameter has no effect if the Nitro setup is not configured for multiple languages. | [optional] 
 
 ### Return type
 

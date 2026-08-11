@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import MetaImage from './MetaImage';
+import TranslationLanguage from './TranslationLanguage';
 
 /**
- * The Meta model module.
- * @module model/Meta
+ * The Translation model module.
+ * @module model/Translation
  * @version 2.28
  */
-class Meta {
+class Translation {
     /**
-     * Constructs a new <code>Meta</code>.
-     * @alias module:model/Meta
+     * Constructs a new <code>Translation</code>.
+     * @alias module:model/Translation
      */
     constructor() { 
         
-        Meta.initialize(this);
+        Translation.initialize(this);
     }
 
     /**
@@ -38,46 +38,53 @@ class Meta {
     }
 
     /**
-     * Constructs a <code>Meta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Translation</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Meta} obj Optional instance to populate.
-     * @return {module:model/Meta} The populated <code>Meta</code> instance.
+     * @param {module:model/Translation} obj Optional instance to populate.
+     * @return {module:model/Translation} The populated <code>Translation</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Meta();
+            obj = obj || new Translation();
 
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            if (data.hasOwnProperty('language')) {
+                obj['language'] = TranslationLanguage.constructFromObject(data['language']);
             }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = MetaImage.constructFromObject(data['image']);
+            if (data.hasOwnProperty('slug')) {
+                obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            }
+            if (data.hasOwnProperty('href')) {
+                obj['href'] = ApiClient.convertToType(data['href'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>Meta</code>.
+     * Validates the JSON data with respect to <code>Translation</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Meta</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Translation</code>.
      */
     static validateJSON(data) {
-        // ensure the json data is a string
-        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
-            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        // validate the optional field `language`
+        if (data['language']) { // data not null
+          TranslationLanguage.validateJSON(data['language']);
         }
-        // validate the optional field `image`
-        if (data['image']) { // data not null
-          MetaImage.validateJSON(data['image']);
+        // ensure the json data is a string
+        if (data['slug'] && !(typeof data['slug'] === 'string' || data['slug'] instanceof String)) {
+            throw new Error("Expected the field `slug` to be a primitive type in the JSON string but got " + data['slug']);
         }
         // ensure the json data is a string
         if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
             throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        }
+        // ensure the json data is a string
+        if (data['href'] && !(typeof data['href'] === 'string' || data['href'] instanceof String)) {
+            throw new Error("Expected the field `href` to be a primitive type in the JSON string but got " + data['href']);
         }
 
         return true;
@@ -89,26 +96,32 @@ class Meta {
 
 
 /**
- * Meta Description
- * @member {String} description
+ * @member {module:model/TranslationLanguage} language
  */
-Meta.prototype['description'] = undefined;
+Translation.prototype['language'] = undefined;
 
 /**
- * @member {module:model/MetaImage} image
+ * A URL-friendly identifier, typically lowercase, that is compatible with URI format and does not contain spaces or special characters.
+ * @member {String} slug
  */
-Meta.prototype['image'] = undefined;
+Translation.prototype['slug'] = undefined;
 
 /**
- * Meta page title
+ * The title
  * @member {String} title
  */
-Meta.prototype['title'] = undefined;
+Translation.prototype['title'] = undefined;
+
+/**
+ * Returns the completed href tag. Internal links are appended with trailing slashes, such as `/about-me`, while email links are formatted with `mailto:hello@flyo.ch`.
+ * @member {String} href
+ */
+Translation.prototype['href'] = undefined;
 
 
 
 
 
 
-export default Meta;
+export default Translation;
 

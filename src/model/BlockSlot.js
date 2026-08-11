@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import MetaImage from './MetaImage';
+import Block from './Block';
 
 /**
- * The Meta model module.
- * @module model/Meta
+ * The BlockSlot model module.
+ * @module model/BlockSlot
  * @version 2.28
  */
-class Meta {
+class BlockSlot {
     /**
-     * Constructs a new <code>Meta</code>.
-     * @alias module:model/Meta
+     * Constructs a new <code>BlockSlot</code>.
+     * @alias module:model/BlockSlot
      */
     constructor() { 
         
-        Meta.initialize(this);
+        BlockSlot.initialize(this);
     }
 
     /**
@@ -38,46 +38,45 @@ class Meta {
     }
 
     /**
-     * Constructs a <code>Meta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BlockSlot</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Meta} obj Optional instance to populate.
-     * @return {module:model/Meta} The populated <code>Meta</code> instance.
+     * @param {module:model/BlockSlot} obj Optional instance to populate.
+     * @return {module:model/BlockSlot} The populated <code>BlockSlot</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Meta();
+            obj = obj || new BlockSlot();
 
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            if (data.hasOwnProperty('identifier')) {
+                obj['identifier'] = ApiClient.convertToType(data['identifier'], 'String');
             }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = MetaImage.constructFromObject(data['image']);
-            }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            if (data.hasOwnProperty('content')) {
+                obj['content'] = ApiClient.convertToType(data['content'], [Block]);
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>Meta</code>.
+     * Validates the JSON data with respect to <code>BlockSlot</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Meta</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>BlockSlot</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
-            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
+        if (data['identifier'] && !(typeof data['identifier'] === 'string' || data['identifier'] instanceof String)) {
+            throw new Error("Expected the field `identifier` to be a primitive type in the JSON string but got " + data['identifier']);
         }
-        // validate the optional field `image`
-        if (data['image']) { // data not null
-          MetaImage.validateJSON(data['image']);
-        }
-        // ensure the json data is a string
-        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
-            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        if (data['content']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['content'])) {
+                throw new Error("Expected the field `content` to be an array in the JSON data but got " + data['content']);
+            }
+            // validate the optional field `content` (array)
+            for (const item of data['content']) {
+                Block.validateJSON(item);
+            };
         }
 
         return true;
@@ -89,26 +88,20 @@ class Meta {
 
 
 /**
- * Meta Description
- * @member {String} description
+ * The unique identifier of the slot
+ * @member {String} identifier
  */
-Meta.prototype['description'] = undefined;
+BlockSlot.prototype['identifier'] = undefined;
 
 /**
- * @member {module:model/MetaImage} image
+ * @member {Array.<module:model/Block>} content
  */
-Meta.prototype['image'] = undefined;
-
-/**
- * Meta page title
- * @member {String} title
- */
-Meta.prototype['title'] = undefined;
+BlockSlot.prototype['content'] = undefined;
 
 
 
 
 
 
-export default Meta;
+export default BlockSlot;
 

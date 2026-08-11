@@ -1,10 +1,8 @@
-# FlyoNitroJs.FieldSchema
+# FlyoNitroJs.MetaImage
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**uniqueId** | **String** |  | [optional] 
 
 
