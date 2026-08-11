@@ -1,0 +1,74 @@
+name: Release
+
+# Publishes a semantic version to npm and opens the matching GitHub release.
+#
+# Cut a release by bumping the version and pushing the tag git creates:
+#
+#   npm version major   # or minor / patch / 2.0.0
+#   git push --follow-tags
+#
+# The tag must match the version in package.json or the run fails before
+# anything is published. Prerelease versions (2.1.0-beta.0) publish under the
+# npm "next" dist-tag so they never become "latest".
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Resolve version and release channel
+        id: version
+        run: |
+          tag_version="${GITHUB_REF_NAME#v}"
+          pkg_version="$(node -p "require('./package.json').version")"
+
+          if [ "$tag_version" != "$pkg_version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $pkg_version"
+            exit 1
+          fi
+
+          # A hyphen marks a prerelease under semver (2.1.0-beta.0).
+          if [ "${pkg_version#*-}" != "$pkg_version" ]; then
+            echo "npm_tag=next" >> "$GITHUB_OUTPUT"
+            echo "prerelease=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "npm_tag=latest" >> "$GITHUB_OUTPUT"
+            echo "prerelease=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Publish to npm
+        run: npm publish --access=public --tag "$NPM_TAG"
+        env:
+          NPM_TAG: ${{ steps.version.outputs.npm_tag }}
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRERELEASE: ${{ steps.version.outputs.prerelease }}
+        run: |
+          flags=""
+          if [ "$PRERELEASE" = "true" ]; then
+            flags="--prerelease"
+          fi
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            --verify-tag \
+            $flags
