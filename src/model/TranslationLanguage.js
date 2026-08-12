@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import MetaImage from './MetaImage';
 
 /**
- * The Meta model module.
- * @module model/Meta
+ * The TranslationLanguage model module.
+ * @module model/TranslationLanguage
  * @version 2.28
  */
-class Meta {
+class TranslationLanguage {
     /**
-     * Constructs a new <code>Meta</code>.
-     * @alias module:model/Meta
+     * Constructs a new <code>TranslationLanguage</code>.
+     * @alias module:model/TranslationLanguage
      */
     constructor() { 
         
-        Meta.initialize(this);
+        TranslationLanguage.initialize(this);
     }
 
     /**
@@ -38,46 +37,39 @@ class Meta {
     }
 
     /**
-     * Constructs a <code>Meta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TranslationLanguage</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Meta} obj Optional instance to populate.
-     * @return {module:model/Meta} The populated <code>Meta</code> instance.
+     * @param {module:model/TranslationLanguage} obj Optional instance to populate.
+     * @return {module:model/TranslationLanguage} The populated <code>TranslationLanguage</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Meta();
+            obj = obj || new TranslationLanguage();
 
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            if (data.hasOwnProperty('shortcode')) {
+                obj['shortcode'] = ApiClient.convertToType(data['shortcode'], 'String');
             }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = MetaImage.constructFromObject(data['image']);
-            }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>Meta</code>.
+     * Validates the JSON data with respect to <code>TranslationLanguage</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Meta</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TranslationLanguage</code>.
      */
     static validateJSON(data) {
         // ensure the json data is a string
-        if (data['description'] && !(typeof data['description'] === 'string' || data['description'] instanceof String)) {
-            throw new Error("Expected the field `description` to be a primitive type in the JSON string but got " + data['description']);
-        }
-        // validate the optional field `image`
-        if (data['image']) { // data not null
-          MetaImage.validateJSON(data['image']);
+        if (data['shortcode'] && !(typeof data['shortcode'] === 'string' || data['shortcode'] instanceof String)) {
+            throw new Error("Expected the field `shortcode` to be a primitive type in the JSON string but got " + data['shortcode']);
         }
         // ensure the json data is a string
-        if (data['title'] && !(typeof data['title'] === 'string' || data['title'] instanceof String)) {
-            throw new Error("Expected the field `title` to be a primitive type in the JSON string but got " + data['title']);
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
 
         return true;
@@ -89,26 +81,21 @@ class Meta {
 
 
 /**
- * Meta Description
- * @member {String} description
+ * Language shortcode, e.g., \"de\" or \"fr\".
+ * @member {String} shortcode
  */
-Meta.prototype['description'] = undefined;
+TranslationLanguage.prototype['shortcode'] = undefined;
 
 /**
- * @member {module:model/MetaImage} image
+ * Full name of the language, e.g., \"Deutsch\" or \"Französisch\".
+ * @member {String} name
  */
-Meta.prototype['image'] = undefined;
-
-/**
- * Meta page title
- * @member {String} title
- */
-Meta.prototype['title'] = undefined;
+TranslationLanguage.prototype['name'] = undefined;
 
 
 
 
 
 
-export default Meta;
+export default TranslationLanguage;
 

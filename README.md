@@ -30,3 +30,20 @@ const pageData = await new PagesApi().page({slug: 'the/slug/of/the/page'})
 ## Documentation
 
 [Read More in the Docs](https://dev.flyo.cloud/nitro/javascript)
+
+Upgrading from 1.x? See [UPGRADE.md](UPGRADE.md) for the breaking changes in 2.0.0.
+
+## Releasing
+
+Regenerate the client from the current OpenAPI spec with `./generate.sh`, then cut
+a semantic version. Pushing the tag builds the package, publishes it to npm and
+opens the matching GitHub release:
+
+```
+npm version major   # or minor / patch / 2.0.0
+git push --follow-tags
+```
+
+The tag has to match the version in `package.json`, otherwise the release
+workflow fails before publishing anything. Prerelease versions such as
+`2.1.0-beta.0` go out under the npm `next` dist-tag rather than `latest`.

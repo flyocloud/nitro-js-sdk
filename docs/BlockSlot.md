@@ -1,4 +1,4 @@
-# FlyoNitroJs.BlockSlots
+# FlyoNitroJs.BlockSlot
 
 ## Properties
 
