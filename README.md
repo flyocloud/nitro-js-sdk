@@ -31,6 +31,8 @@ const pageData = await new PagesApi().page({slug: 'the/slug/of/the/page'})
 
 [Read More in the Docs](https://dev.flyo.cloud/nitro/javascript)
 
+Upgrading from 1.x? See [UPGRADE.md](UPGRADE.md) for the breaking changes in 2.0.0.
+
 ## Releasing
 
 Regenerate the client from the current OpenAPI spec with `./generate.sh`, then cut
